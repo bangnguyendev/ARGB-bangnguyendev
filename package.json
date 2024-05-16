@@ -1,7 +1,7 @@
 {
-  "name": "wled",
+  "name": "argb-wsx28x",
   "version": "1.0.0",
-  "description": "Tools for WLED project",
+  "description": "Tools for ARGB-WS28xx project",
   "main": "tools/cdata.js",
   "directories": {
     "lib": "lib",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aircoookie/WLED.git"
+    "url": "git+https://github.com/bangnguyendev/ARGB-bangnguyendev.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Aircoookie/WLED/issues"
+    "url": "https://github.com/bangnguyendev/ARGB-bangnguyendev/issues"
   },
-  "homepage": "https://github.com/Aircoookie/WLED#readme",
+  "homepage": "https://github.com/bangnguyendev/ARGB-bangnguyendev#readme",
   "dependencies": {
     "clean-css": "^4.2.3",
     "html-minifier-terser": "^5.1.1",
