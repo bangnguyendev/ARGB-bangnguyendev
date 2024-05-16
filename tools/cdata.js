@@ -61,8 +61,8 @@ function adoptVersionAndRepo(html) {
     repoUrl = repoUrl.replace(/^git\+/, "");
     repoUrl = repoUrl.replace(/\.git$/, "");
     // Replace we
-    html = strReplace(html, "https://github.com/atuline/WLED", repoUrl);
-    html = strReplace(html, "https://github.com/Aircoookie/WLED", repoUrl);
+    html = strReplace(html, "https://github.com/bangnguyendev/ARGB-bangnguyendev", repoUrl);
+    html = strReplace(html, "https://github.com/bangnguyendev/ARGB-bangnguyendev", repoUrl);
   }
   let version = packageJson.version;
   if (version) {

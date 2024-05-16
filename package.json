@@ -1,5 +1,5 @@
 {
-  "name": "argb-wsx28x",
+  "name": "argb-ws28x",
   "version": "1.0.0",
   "description": "Tools for ARGB-WS28xx project",
   "main": "tools/cdata.js",

@@ -649,7 +649,7 @@ void getSettingsJS(byte subPage, char* dest)
     sappend('c',SET_F("NO"),otaLock);
     sappend('c',SET_F("OW"),wifiLock);
     sappend('c',SET_F("AO"),aOtaEnabled);
-    sappends('m',SET_F("(\"sip\")[0]"),(char*)F("WLED "));
+    sappends('m',SET_F("(\"sip\")[0]"),(char*)F("ARGB "));
     olen -= 2; //delete ";
     oappend(versionString);
     oappend(SET_F(" (build "));
@@ -709,7 +709,7 @@ void getSettingsJS(byte subPage, char* dest)
 
   if (subPage == SUBPAGE_UPDATE) // update
   {
-    sappends('m',SET_F("(\"sip\")[0]"),(char*)F("WLED "));
+    sappends('m',SET_F("(\"sip\")[0]"),(char*)F("ARGB "));
     olen -= 2; //delete ";
     oappend(versionString);
     oappend(SET_F("<br>("));

@@ -192,7 +192,7 @@
 			loc = true;
 			locip = localStorage.getItem('locIp');
 			if (!locip) {
-				locip = prompt("File Mode. Please enter WLED IP!");
+				locip = prompt("File Mode. Please enter ARGB IP!");
 				localStorage.setItem('locIp', locip);
 			}
 		} else {
@@ -265,8 +265,8 @@
 			<i class="warn">This firmware build does not include simplified UI support.<br></i>
 		</div>
 		<div id="Simple">Enable simplified UI: <input type="checkbox" name="SU"><br></div>
-		<i>The following UI customization settings are unique both to the WLED device and this browser.<br>
-		You will need to set them again if using a different browser, device or WLED IP address.<br>
+		<i>The following UI customization settings are unique both to the ARGB device and this browser.<br>
+		You will need to set them again if using a different browser, device or ARGB IP address.<br>
 		Refresh the main UI to apply changes.</i><br>
 		
 		<div id="gen">Loading settings...</div>

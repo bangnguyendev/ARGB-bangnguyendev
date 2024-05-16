@@ -515,10 +515,10 @@ function populateInfo(i)
 	}
 	var vcn = "bangnguyendev";
 	if (i.ver.startsWith("1.0.")) vcn = "bangnguyendev";
-	if (i.ver.includes("-bl")) vcn = "Supāku";
+	if (i.ver.includes("-bl")) vcn = "beta";
 	if (i.cn) vcn = i.cn;
 
-	cn += `v${i.ver} "${vcn}"<br><br><table>
+	cn += `v${i.ver} - ${vcn}<br><br><table>
 ${urows}
 ${inforow("Build",i.vid)}
 ${inforow("Signal strength",i.wifi.signal +"% ("+ i.wifi.rssi, " dBm)")}

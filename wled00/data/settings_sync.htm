@@ -60,7 +60,7 @@
 			loc = true;
 			locip = localStorage.getItem('locIp');
 			if (!locip) {
-				locip = prompt("File Mode. Please enter WLED IP!");
+				locip = prompt("File Mode. Please enter ARGB IP!");
 				localStorage.setItem('locIp', locip);
 			}
 		} else {
@@ -88,7 +88,7 @@
 <button type="button" onclick="B()">Back</button><button type="submit">Save</button><hr>
 </div>
 <h2>Sync setup</h2>
-<h3>WLED Broadcast</h3>
+<h3>ARGB Broadcast</h3>
 UDP Port: <input name="UP" type="number" min="1" max="65535" class="d5" required><br>
 2nd Port: <input name="U2" type="number" min="1" max="65535" class="d5" required><br>
 <h3>Sync groups</h3>
@@ -192,7 +192,7 @@ Also emulate devices to call the first <input name="AP" type="number" class="s" 
 </div>
 <hr class="sml">
 <div class="warn">&#9888; <b>MQTT and Hue sync all connect to external hosts!<br>
-This may impact the responsiveness of WLED.</b><br>
+This may impact the responsiveness of ARGB.</b><br>
 </div>
 For best results, only use one of these services at a time.<br>
 (alternatively, connect a second ESP to them and use the UDP sync)
