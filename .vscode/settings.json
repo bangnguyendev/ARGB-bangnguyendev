@@ -1,0 +1,6 @@
+{
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "tft_espi_esp8266.c": "cpp"
+    }
+}

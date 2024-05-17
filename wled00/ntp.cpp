@@ -25,8 +25,8 @@
 
 Timezone* tz;
 
-#define TZ_UTC                  0
-#define TZ_UK                   1
+#define TZ_VN_HCM               0
+#define TZ_UTC                  1
 #define TZ_EUROPE_CENTRAL       2
 #define TZ_EUROPE_EASTERN       3
 #define TZ_US_EASTERN           4
@@ -56,13 +56,13 @@ byte tzCurrent = TZ_INIT; //uninitialized
 
 /* C++11 form -- static std::array<std::pair<TimeChangeRule, TimeChangeRule>, TZ_COUNT> TZ_TABLE PROGMEM = {{ */
 static const std::pair<TimeChangeRule, TimeChangeRule> TZ_TABLE[] PROGMEM = {
+    /* TZ_VIETNAM */ {
+      {Last, Sun, Mar, 2, 420},   // Thời gian mùa hè (UTC+7)
+      {Last, Sun, Sep, 2, 420}    // Thời gian bình thường (UTC+7)
+    },
     /* TZ_UTC */ {
       {Last, Sun, Mar, 1, 0}, // UTC
       {Last, Sun, Mar, 1, 0}  // Same
-    },
-    /* TZ_UK */ {
-      {Last, Sun, Mar, 1, 60},      //British Summer Time
-      {Last, Sun, Oct, 2, 0}       //Standard Time
     },
     /* TZ_EUROPE_CENTRAL */ {
       {Last, Sun, Mar, 2, 120},     //Central European Summer Time

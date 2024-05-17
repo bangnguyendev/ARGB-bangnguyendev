@@ -5,14 +5,14 @@
 
 // ST7789 135 x 240 display with no chip select line
 
-#define ST7789_DRIVER     // Configure all registers
+#define ST7735_DRIVER     // Configure all registers
 
-#define TFT_WIDTH  135
-#define TFT_HEIGHT 240
+#define TFT_WIDTH  128
+#define TFT_HEIGHT 128
 
 #define CGRAM_OFFSET      // Library will add offsets required
 
-//#define TFT_RGB_ORDER TFT_RGB  // Colour order Red-Green-Blue
+#define TFT_RGB_ORDER TFT_RGB  // Colour order Red-Green-Blue
 //#define TFT_RGB_ORDER TFT_BGR  // Colour order Blue-Green-Red
 
 //#define TFT_INVERSION_ON
@@ -20,11 +20,11 @@
 
 // EleksTube IPS
 #define TFT_SDA_READ      // Read and write on the MOSI/SDA pin, no separate MISO pin
-#define TFT_MOSI 23
-#define TFT_SCLK 18
-//#define TFT_CS    -1 // Not connected
-#define TFT_DC   25  // Data Command, aka Register Select or RS
-#define TFT_RST  26  // Connect reset to ensure display initialises
+#define TFT_MOSI 13
+#define TFT_SCLK 14
+#define TFT_CS   15  // Not connected - bangnguyendev da sua lai thanh 0
+#define TFT_DC   16  // Data Command, aka Register Select or RS
+#define TFT_RST  -1  // Connect reset to ensure display initialises
 
 #define LOAD_GLCD   // Font 1. Original Adafruit 8 pixel font needs ~1820 bytes in FLASH
 //#define LOAD_FONT2  // Font 2. Small 16 pixel high font, needs ~3534 bytes in FLASH, 96 characters
