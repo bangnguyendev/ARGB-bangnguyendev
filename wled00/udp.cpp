@@ -661,7 +661,8 @@ void sendSysInfoUDP()
   for (size_t x = 0; x < 4; x++) {
     data[x + 2] = ip[x];
   }
-  memcpy((byte *)data + 6, serverDescription, 32);
+  memcpy((byte *)data + 6, serverDescription, 32); 
+  // memcpy((byte *)data + 6, cmDNS, 32); // note o file json.cpp node[F("name")] = it->second.nodeName;  bangnguyendev
   #ifdef ESP8266
   data[38] = NODE_TYPE_ID_ESP8266;
   #elif defined(CONFIG_IDF_TARGET_ESP32C3)

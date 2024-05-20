@@ -30,12 +30,12 @@ def bin_rename_copy(source, target, env):
     map_file = "{}map{}{}.map".format(OUTPUT_DIR, os.path.sep, variant)
     bin_file = "{}firmware{}{}.bin".format(OUTPUT_DIR, os.path.sep, variant)
 
-    release_name = _get_cpp_define_value(env, "WLED_RELEASE_NAME")
+    release_name = _get_cpp_define_value(env, "WLED_RELEASE_NAME") # WLED_RELEASE_NAME LÀ DEFINE_NAME DANH DAU VIEC RELEASE
 
     if release_name:
         _create_dirs(["release"])
         version = _get_cpp_define_value(env, "WLED_VERSION")
-        release_file = "{}release{}WLED_{}_{}.bin".format(OUTPUT_DIR, os.path.sep, version, release_name)
+        release_file = "{}release{}ARGB_{}_{}.bin".format(OUTPUT_DIR, os.path.sep, version, release_name)
         shutil.copy(str(target[0]), release_file)
 
     # check if new target files exist and remove if necessary

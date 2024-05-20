@@ -164,7 +164,7 @@ async function onLoad()
 		loc = true;
 		locip = localStorage.getItem('locIp');
 		if (!locip) {
-			locip = prompt("File Mode. Please enter WLED IP!");
+			locip = prompt("File Mode. Please enter ARGB IP!");
 			localStorage.setItem('locIp', locip);
 		}
 	} else {
@@ -604,7 +604,7 @@ function populateNodes(i,n)
 		for (var x=0;x<n.nodes.length;x++) {
 			var o = n.nodes[x];
 			if (o.name) {
-				var url = `<button class="btn tab" title="${o.ip}" onclick="location.assign('http://${o.ip}');">${bname(o)}</button>`;
+				var url = `<button class="btn tab" title="${o.ip}" onclick="location.assign('http://${o.ip}');">${cmDNS}</button>`;
 				urows += inforow(url,`${btype(o.type)}<br><i>${o.vid==0?"N/A":o.vid}</i>`);
 				nnodes++;
 			}

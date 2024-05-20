@@ -470,6 +470,7 @@ void getSettingsJS(byte subPage, char* dest)
   if (subPage == SUBPAGE_UI)
   {
     sappends('s',SET_F("DS"),serverDescription);
+    // sappends('s',SET_F("DS"),cmDNS); // bangnguyendev edit
     sappend('c',SET_F("ST"),syncToggleReceive);
   #ifdef WLED_ENABLE_SIMPLE_UI
     sappend('c',SET_F("SU"),simplifiedUI);
