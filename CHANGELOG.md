@@ -1,7 +1,7 @@
 ## WLED changelog
 
 #### Build 2405100
--   WLED 0.14.3 release
+-   WLED 1.0.1 release - porting from WLED 0.14.3 release
 -   bangnguyendev updated Web UI
 
 #### Build 2404040
