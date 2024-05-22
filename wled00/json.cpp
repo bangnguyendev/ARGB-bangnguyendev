@@ -790,7 +790,7 @@ void serializeInfo(JsonObject root)
   root[F("opt")] = os;
 
   root[F("brand")] = "ARGB";
-  root[F("product")] = F("berry");
+  root[F("product")] = F("@ARGB-LED");
   root["mac"] = escapedMac;
   char s[16] = "";
   if (Network.isConnected())
