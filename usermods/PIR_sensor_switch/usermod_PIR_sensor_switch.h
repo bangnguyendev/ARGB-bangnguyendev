@@ -300,7 +300,7 @@ void PIRsensorSwitch::publishHomeAssistantAutodiscovery()
     device[F("name")] = serverDescription;
     device[F("ids")]  = String(F("wled-sensor-")) + mqttClientID;
     device[F("mf")]   = "WLED";
-    device[F("mdl")]  = F("FOSS");
+    device[F("mdl")]  = F("HAPPY SMART LIGHT");
     device[F("sw")]   = versionString;
     
     sprintf_P(buf, PSTR("homeassistant/binary_sensor/%s/config"), uid);

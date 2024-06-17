@@ -403,7 +403,7 @@ const char PAGE_dmxmap[] PROGMEM = R"=====()=====";
       filter: "html-minify",
     },
     {
-      file: "favicon.ico",
+      file: "favicon-32x32.png",
       name: "favicon",
       method: "binary",
     },
