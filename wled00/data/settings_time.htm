@@ -165,7 +165,7 @@
 	<form id="form_s" name="Sf" method="post" onsubmit="Wd()">
 		<div class="toprow">
 		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
-		<button type="button" onclick="B()">Back</button><button type="submit">Save</button><hr>
+		<button type="button" onclick="B()">Quay về</button><button type="submit">Lưu cài đặt</button><hr>
 		</div>
 		<h2>Cài đặt thời gian</h2>
 		Lấy thời gian từ NTP server: <input type="checkbox" name="NT" checked><br>
@@ -198,9 +198,9 @@
 			<option value="22">PKT (Pakistan)</option>
 		</select><br>
 		UTC offset: <input name="UO" type="number" min="-65500" max="65500" required> seconds (max. 18 hours)<br>
-		Current local time is <span class="times">unknown</span>.<br>
-		Latitude: <select name="LTR"><option value="N">N</option><option value="S">S</option></select><input name="LT" type="number" class="xl" min="0" max="66.6" step="0.01"><br>
-		Longitude: <select name="LNR"><option value="E">E</option><option value="W">W</option></select><input name="LN" type="number" class="xl" min="0" max="180" step="0.01"><br>
+		Thời gian hiện tại là <span class="times">unknown</span>.<br>
+		Vĩ độ: <select name="LTR"><option value="N">N</option><option value="S">S</option></select><input name="LT" type="number" class="xl" min="0" max="66.6" step="0.01"><br>
+		Kinh độ: <select name="LNR"><option value="E">E</option><option value="W">W</option></select><input name="LN" type="number" class="xl" min="0" max="180" step="0.01"><br>
 		<button type="button" id="locbtn" onclick="getLoc()">Get location</button>
 		<div><i>(opens new tab, only works in browser)</i></div>
 		<div id="sun" class="times"></div>
@@ -224,7 +224,7 @@
 		Alexa On/Off Preset: <input name="A0" class="m" type="number" min="0" max="250" required> <input name="A1" class="m" type="number" min="0" max="250" required><br>
 		Countdown-Over Preset: <input name="MC" class="m" type="number" min="0" max="250" required><br>
 		Timed-Light-Over Presets: <input name="MN" class="m" type="number" min="0" max="250" required><br>
-		<h3>Button actions</h3>
+		<h3>Hành vi của nút nhấn</h3>
 		<table style="margin: 0 auto;" id="macros">
 			<thead>
 				<tr>
@@ -243,7 +243,7 @@
 		<table id="TMT" style="min-width:330px;"></table>
 		</div>
 		<hr>
-		<button type="button" onclick="B()">Back</button><button type="submit">Save</button>
+		<button type="button" onclick="B()">Quay về</button><button type="submit">Lưu cài đặt</button>
 	</form>
 </body>
 </html>

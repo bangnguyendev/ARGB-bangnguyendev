@@ -14,20 +14,20 @@
 		"comp":{
 			"labels":"Show button labels",
 			"colors":{
-				"LABEL":"Color selection methods",
-				"picker": "Color Wheel",
-				"rgb": "RGB sliders",
-				"quick": "Quick color selectors",
-				"hex": "HEX color input"
+				"LABEL":"Giao diện bảng màu",
+				"picker": "Bảng màu tròn",
+				"rgb": "RGB kéo trượt",
+				"quick": "Chọn màu nhanh",
+				"hex": "Điền mã HEX"
 				},
 			"pcmbot": "Hiển thị nút PC mode",
 			"pid": "Hiển thị preset IDs",
-			"seglen": "Tùy chọn để đặt chiều dài của đoạn thay vì dừng sô thứ tự LED.",
-			"segpwr": "Tùy chọn để ẩn công suất và độ sáng của đoạn LED",
+			"seglen": "Đặt chiều dài của đoạn thay vì dùng số thứ tự LED",
+			"segpwr": "Ẩn công suất và độ sáng của đoạn LED",
 			"segexp" : "Luôn mở segment đầu tiên",
 			"css": "Enable custom CSS",
 			"hdays": "Enable custom Holidays list",
-			"fxdef": "Use effect default parameters",
+			"fxdef": "Sử dụng các tham số mặc định của hiệu ứng",
 			"idsort": "Sắp xếp presets theo ID"
 		},
 		"theme":{
@@ -40,7 +40,7 @@
 				"random":"Hình nền ngẫu nhiên"
 			},
 			"color":{
-				"bg":"BG HEX color"
+				"bg":"Mã HEX màu nềnr"
 			}
 		}
 	};
@@ -255,7 +255,7 @@
 	<form id="form_s" name="Sf" method="post">
 		<div class="toprow">
 		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
-		<button type="button" onclick="B()">Back</button><button type="button" onclick="Save()">Lưu cài đặt</button><br>
+		<button type="button" onclick="B()">Quay về</button><button type="button" onclick="Save()">Lưu cài đặt</button><br>
 		<span id="lssuc" style="color:green; display:none">&#10004; Giao diện được lưu!</span>
 		<span id="lserr" style="color:red; display:none">&#9888; Could not access local storage. Make sure it is enabled in your browser.</span><hr>
 		</div>
@@ -272,7 +272,7 @@
 		
 		<div id="gen">Mở các cài đặt...</div>
 		
-		<h3>UI Appearance</h3>
+		<h3>Giao diện người dùng</h3>
 		<span class="l"></span>: <input type="checkbox" id="comp_labels" class="agi cb"><br>
 		<span class="l"></span>: <input type="checkbox" id="comp_pcmbot" class="agi cb"><br>
 		<span class="l"></span>: <input type="checkbox" id="comp_pid" class="agi cb"><br>

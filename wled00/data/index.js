@@ -1572,10 +1572,10 @@ function setEffectParameters(idx)
 			paOnOff[0] = paOnOff[0].substring(0,dPos);
 		}
 		if (paOnOff.length>0 && paOnOff[0] != "!") pall.innerHTML = paOnOff[0];
-		else                                       pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Color palette';
+		else                                       pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i>Bảng màu';
 	} else {
 		// disable palette list
-		pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Color palette not used';
+		pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i>Bảng màu không sử dụng';
 		palw.style.display = "none";
 	}
 	// not all color selectors shown, hide palettes created from color selectors

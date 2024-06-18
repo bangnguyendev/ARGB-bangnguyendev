@@ -10,7 +10,7 @@
 	var loc = false, locip, locproto = "http:";
 	var maxPanels=64;
 	var ctx = null; // WLEDMM
-	function H(){window.open("https://kno.wled.ge/features/2D");}
+	// function H(){window.open("https://kno.wled.ge/features/2D");}
 	function B(){window.open(getURL("/settings"),"_self");}
 	function gId(n){return d.getElementById(n);}
 	function fS(){d.Sf.submit();} // <button type=submit> sometimes didn't work
@@ -107,20 +107,20 @@
 		var ph = parseInt(d.Sf.PH.value);
 		let b = `<div id="pnl${i}"><hr class="sml">Panel ${i}<br>
 1<sup>st</sup> LED: <select name="P${i}B" oninput="UI()">
-	<option value="0">Top</option>
-	<option value="1">Bottom</option>
+	<option value="0">Trên</option>
+	<option value="1">Dưới</option>
 </select><select name="P${i}R" oninput="UI()">
-	<option value="0">Left</option>
-	<option value="1">Right</option>
+	<option value="0">Trái</option>
+	<option value="1">Phải</option>
 </select><br>
 Orientation: <select name="P${i}V" oninput="UI()">
-	<option value="0">Horizontal</option>
-	<option value="1">Vertical</option>
+	<option value="0">Ngang</option>
+	<option value="1">Dọc</option>
 </select><br>
-Serpentine: <input type="checkbox" name="P${i}S" oninput="UI()"><br>
-Dimensions (WxH): <input name="P${i}W" type="number" min="1" max="255" value="${pw}" oninput="UI()"> x <input name="P${i}H" type="number" min="1" max="255" value="${ph}" oninput="UI()"><br>
-Offset X:<input name="P${i}X" type="number" min="0" max="255" value="0" oninput="UI()">
-Y:<input name="P${i}Y" type="number" min="0" max="255" value="0" oninput="UI()"><br><i>(offset from top-left corner in # LEDs)</i>
+Tạo thành bởi dây LED?: <input type="checkbox" name="P${i}S" oninput="UI()"><br>
+Kích thước (WxH): <input name="P${i}W" type="number" min="1" max="255" value="${pw}" oninput="UI()"> x <input name="P${i}H" type="number" min="1" max="255" value="${ph}" oninput="UI()"><br>
+Vị trí X:<input name="P${i}X" type="number" min="0" max="255" value="0" oninput="UI()">
+Y:<input name="P${i}Y" type="number" min="0" max="255" value="0" oninput="UI()"><br><i>(vị trí so với Led trêncùng-bêntrái của bảng LED tổng)</i>
 </div>`;
 		p.insertAdjacentHTML("beforeend", b);
 	}
@@ -299,7 +299,7 @@ Y:<input name="P${i}Y" type="number" min="0" max="255" value="0" oninput="UI()">
 			ctx.fillStyle = "orange";
 			ctx.fillText(p, topLeftX + pw/2*ppL - 10, topLeftY + ph/2*ppL + 10);
 		}
-		gId("MD").innerHTML = "Matrix Dimensions (W*H=LC): " + maxWidth + " x " + maxHeight + " = " + maxWidth * maxHeight;
+		gId("MD").innerHTML = "Kích thước bảng tổng (W*H=LC): " + maxWidth + " x " + maxHeight + " = " + maxWidth * maxHeight;
 	}
 	</script>
 	<style>@import url("style.css");</style>
@@ -308,7 +308,7 @@ Y:<input name="P${i}Y" type="number" min="0" max="255" value="0" oninput="UI()">
 	<form id="form_s" name="Sf" method="post">
 	<div class="toprow">
 		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
-		<button type="button" onclick="B()">Back</button><button type="button" onclick="fS()">Save</button><hr>
+		<button type="button" onclick="B()">Quay về</button><button type="button" onclick="fS()">Lưu cài đặt</button><hr>
 	</div>
 	<h2>2D setup</h2>
 	Strip or panel:
@@ -355,7 +355,7 @@ Y:<input name="P${i}Y" type="number" min="0" max="255" value="0" oninput="UI()">
 			A value of -1 means that pixel at that position is missing, a value of 0 means never paint that pixel, and 1 means regular pixel.</i>
 	</div>
 	<hr>
-	<button type="button" onclick="B()">Back</button><button type="button" onclick="fS()">Save</button>
+	<button type="button" onclick="B()">Quay về</button><button type="button" onclick="fS()">Lưu cài đặt</button>
 	</form>
 	<div id="toast"></div>
 </body>

@@ -13,7 +13,7 @@
 		d.max_gpio = 50;
 		var customStarts=false,startsDirty=[],maxCOOverrides=5;
 		var loc = false, locip, locproto = "http:";
-		function H(){window.open("https://kno.wled.ge/features/settings/#led-settings");}
+		// function H(){window.open("https://kno.wled.ge/features/settings/#led-settings");}
 		function B(){window.open(getURL("/settings"),"_self");}
 		function gId(n){return d.getElementById(n);}
 		function off(n){d.getElementsByName(n)[0].value = -1;}
@@ -688,15 +688,15 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 	<form id="form_s" name="Sf" method="post">
 		<div class="toprow">
 		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
-		<button type="button" onclick="B()">Back</button><button type="submit">Save</button><hr>
+		<button type="button" onclick="B()">Quay về</button><button type="submit">Lưu cài đặt</button><hr>
 		</div>
-		<h2>LED &amp; Hardware setup</h2>
-		Total LEDs: <span id="lc">?</span> <span id="pc"></span><br>
-		<i>Recommended power supply for brightest white:</i><br>
+		<h2>LED &amp; Cấu hình phần cứng</h2>
+		Tổng số LEDs: <span id="lc">?</span> <span id="pc"></span><br>
+		<i>Nguồn điện đề nghị cho màu trắng sáng nhất:</i><br>
 		<b><span id="psu">?</span></b><br>
 		<span id="psu2"><br></span>
 		<br>
-		Enable automatic brightness limiter: <input type="checkbox" name="ABen" onchange="enABL()" id="able"><br>
+		Bật giới hạn độ sáng tự động: <input type="checkbox" name="ABen" onchange="enABL()" id="able"><br>
 		<div id="abl">
 			Maximum Current: <input name="MA" type="number" class="l" min="250" max="65000" oninput="UI()" required> mA<br>
 			<div id="ampwarning" class="warn" style="display: none;">
@@ -705,10 +705,10 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 				please use thick cables,<br>
 				multiple power injection points and a fuse!<br>
 			</div>
-			<i>Automatically limits brightness to stay close to the limit.<br>
+			<i>Tự động giới hạn độ sáng để ở gần mức giới hạn.<br>
 			Keep at &lt;1A if powering LEDs directly from the ESP 5V pin!<br>
-			If you are using an external power supply, enter its rating.<br>
-			(Current estimated usage: <span class="pow">unknown</span>)</i><br><br>
+			Nếu bạn đang sử dụng nguồn điện bên ngoài, hãy nhập định mức của nó.<br>
+			(Mức sử dụng ước tính hiện tại: <span class="pow">unknown</span>)</i><br><br>
 			LED voltage (Max. current for a single LED):<br>
 			<select name="LAsel" onchange="enLA()">
 				<option value="55" selected>5V default (55mA)</option>
@@ -718,8 +718,10 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 				<option value="50">Custom</option>
 			</select><br>
 			<span id="LAdis" style="display: none;">Custom max. current per LED: <input name="LA" type="number" min="0" max="255" id="la" oninput="UI()" required> mA<br></span>
-			<i>Keep at default if you are unsure about your type of LEDs.</i><br>
+			<i>Giữ ở chế độ mặc định nếu bạn không chắc chắn về loại đèn LED của mình.</i><br>
 		</div>
+
+		<hr>
 		<h3>Hardware setup</h3>
 		<div id="mLC">LED outputs:</div>
 		<hr class="sml">
@@ -762,22 +764,27 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 		<div id="json" style="display:none;">JSON file: <input type="file" name="data" accept=".json"><button type="button" class="sml" onclick="uploadFile('/ir.json')">Upload</button><br></div>
 		<a href="https://kno.wled.ge/interfaces/infrared/" target="_blank">IR info</a><br>
 		Relay GPIO: <input type="number" min="-1" max="48" name="RL" onchange="UI()" class="xs"> Invert <input type="checkbox" name="RM"><span style="cursor: pointer;" onclick="off('RL')">&nbsp;&#x2715;</span><br>
-		<hr class="sml">
+		
+		<hr>
 		<h3>Defaults</h3>
-		Turn LEDs on after power up/reset: <input type="checkbox" name="BO"><br>
-		Default brightness: <input name="CA" type="number" class="m" min="0" max="255" required> (0-255)<br><br>
+		Mở đèn sau khi khởi động hoặc mở nguồn: <input type="checkbox" name="BO"><br>
+		Độ sáng mặc định: <input name="CA" type="number" class="m" min="0" max="255" required> (0-255)<br><br>
 		Apply preset <input name="BP" type="number" class="m" min="0" max="250" required> at boot (0 uses defaults)
 		<br><br>
 		Use Gamma correction for color: <input type="checkbox" name="GC"> (strongly recommended)<br>
 		Use Gamma correction for brightness: <input type="checkbox" name="GB"> (not recommended)<br>
 		Use Gamma value: <input name="GV" type="number" class="m" placeholder="2.8" min="1" max="3" step="0.1" required><br><br>
 		Brightness factor: <input name="BF" type="number" class="m" min="1" max="255" required> %
+		
+		<hr>
 		<h3>Transitions</h3>
 		Crossfade: <input type="checkbox" name="TF"><br>
 		Effect blending: <input type="checkbox" name="EB"><br>
 		Transition Time: <input name="TD" type="number" class="xl" min="0" max="65500"> ms<br>
 		Enable Palette transitions: <input type="checkbox" name="PF"><br>
 		<i>Random Cycle</i> Palette Time: <input name="TP" type="number" class="m" min="1" max="255"> s<br>
+
+		<hr>
 		<h3>Timed light</h3>
 		Default Duration: <input name="TL" type="number" class="m" min="1" max="255" required> min<br>
 		Default Target brightness: <input name="TB" type="number" class="m" min="0" max="255" required><br>
@@ -788,6 +795,8 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 			<option value="2">Fade Color</option>
 			<option value="3">Sunrise</option>
 		</select>
+
+		<hr>
 		<h3>White management</h3>
 		White Balance correction: <input type="checkbox" name="CCT"><br>
 		<div id="wc">
@@ -816,7 +825,7 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 		<hr class="sml">
 		<div id="cfg">Config template: <input type="file" name="data2" accept=".json"><button type="button" class="sml" onclick="loadCfg(d.Sf.data2)">Apply</button><br></div>
 		<hr>
-		<button type="button" onclick="B()">Back</button><button type="submit">Save</button>
+		<button type="button" onclick="B()">Quay về</button><button type="submit">Lưu cài đặt</button>
 	</form>
 	<div id="toast"></div>
 </body>

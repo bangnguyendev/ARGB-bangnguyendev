@@ -12,12 +12,12 @@
 
 		function gId(e) { return d.getElementById(e); }
 		function cE(e) { return d.createElement(e); }
-		function H(){window.open("https://kno.wled.ge/features/settings/#wifi-settings");}
+		// function H(){window.open("https://kno.wled.ge/features/settings/#wifi-settings");}
 		function B(){window.open(getURL("/settings"),"_self");}
 		function N() {
 			const button = gId("scan");
 			button.disabled = true;
-			button.textContent = "Scanning...";
+			button.textContent = "Đang tìm...";
 
 			fetch(getURL("/json/net")).then((response) => {
 				return response.json();
@@ -86,7 +86,7 @@
 				}
 
 				button.disabled = false;
-				button.textContent = "Scan";
+				button.textContent = "Tiếp tục tìm Wifi";
 			});
 		}
 		// replace WiFi select with custom SSID input field again
@@ -185,7 +185,7 @@
 		Kênh sóng WIFI AP: <input name="AC" type="number" class="xs" min="1" max="13" required><br>
 		Wifi AP được kích hoạt khi:
 		<select name="AB">
-		<option value="0">Không kết nói sau khi khởi động</option>
+		<option value="0">Không kết nối sau khi khởi động</option>
 		<option value="1">Không thể kết nối đến WIFI</option>
 		<option value="2">Luôn mở</option>
 		<option value="3">Không bao giờ (không khuyến khích)</option></select><br>
