@@ -20,24 +20,24 @@
 				"quick": "Quick color selectors",
 				"hex": "HEX color input"
 				},
-			"pcmbot": "Show bottom tab bar in PC mode",
-			"pid": "Show preset IDs",
-			"seglen": "Set segment length instead of stop LED",
-			"segpwr": "Hide segment power &amp; brightness",
-			"segexp" : "Always expand first segment",
+			"pcmbot": "Hiển thị nút PC mode",
+			"pid": "Hiển thị preset IDs",
+			"seglen": "Tùy chọn để đặt chiều dài của đoạn thay vì dừng sô thứ tự LED.",
+			"segpwr": "Tùy chọn để ẩn công suất và độ sáng của đoạn LED",
+			"segexp" : "Luôn mở segment đầu tiên",
 			"css": "Enable custom CSS",
 			"hdays": "Enable custom Holidays list",
 			"fxdef": "Use effect default parameters",
-			"idsort": "Sort presets by ID"
+			"idsort": "Sắp xếp presets theo ID"
 		},
 		"theme":{
 			"alpha": {
-				"bg":"Background opacity",
-				"tab":"Button opacity"
+				"bg":"Trong suốt nền",
+				"tab":"Trong suốt nút nhấn"
 			},
 			"bg":{
-				"url":"BG image URL",
-				"random":"Random BG image"
+				"url":"Link ảnh nền:",
+				"random":"Hình nền ngẫu nhiên"
 			},
 			"color":{
 				"bg":"BG HEX color"
@@ -254,23 +254,23 @@
 <body onload="S()">
 	<form id="form_s" name="Sf" method="post">
 		<div class="toprow">
-		<div class="helpB"><button type="button" onclick="H()">?</button></div>
-		<button type="button" onclick="B()">Back</button><button type="button" onclick="Save()">Save</button><br>
-		<span id="lssuc" style="color:green; display:none">&#10004; Local UI settings saved!</span>
+		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
+		<button type="button" onclick="B()">Back</button><button type="button" onclick="Save()">Lưu cài đặt</button><br>
+		<span id="lssuc" style="color:green; display:none">&#10004; Giao diện được lưu!</span>
 		<span id="lserr" style="color:red; display:none">&#9888; Could not access local storage. Make sure it is enabled in your browser.</span><hr>
 		</div>
-		<h2>Web Setup</h2>
-		Server description: <input type="text" name="DS" maxlength="32"><br>
+		<h2>Cài đặt giao diện</h2>
+		Tên thiết bị: <input type="text" name="DS" maxlength="32"><br>
 		Sync button toggles both send and receive: <input type="checkbox" name="ST"><br>
 		<div id="NoSimple" class="hide">
 			<i class="warn">This firmware build does not include simplified UI support.<br></i>
 		</div>
 		<div id="Simple">Enable simplified UI: <input type="checkbox" name="SU"><br></div>
-		<i>The following UI customization settings are unique both to the ARGB device and this browser.<br>
-		You will need to set them again if using a different browser, device or ARGB IP address.<br>
-		Refresh the main UI to apply changes.</i><br>
+		<i>Các cài đặt tùy chỉnh giao diện người dùng sau đây là duy nhất cho cả thiết bị ARGB và trình duyệt này.<br>
+		Bạn sẽ cần phải đặt lại chúng nếu sử dụng trình duyệt, thiết bị hoặc địa chỉ IP ARGB khác.<br>
+		Làm mới giao diện người dùng chính để áp dụng các thay đổi.</i><br>
 		
-		<div id="gen">Loading settings...</div>
+		<div id="gen">Mở các cài đặt...</div>
 		
 		<h3>UI Appearance</h3>
 		<span class="l"></span>: <input type="checkbox" id="comp_labels" class="agi cb"><br>
@@ -281,13 +281,13 @@
 		<span class="l"></span>: <input type="checkbox" id="comp_segexp" class="agi cb" checked><br>
 		<span class="l"></span>: <input type="checkbox" id="comp_fxdef" class="agi cb"><br>
 		<span class="l"></span>: <input type="checkbox" id="comp_idsort" class="agi cb"><br>
-		I hate dark mode: <input type="checkbox" id="dm" onchange="UI()"><br>
+		Giao diện trắng sáng: <input type="checkbox" id="dm" onchange="UI()"><br>
 		<span id="idonthateyou" style="display:none"><i>Why would you? </i>&#x1F97A;<br></span>
 		<span class="l"></span>: <input type="number" min=0.0 max=1.0 step=0.01 id="theme_alpha_tab" class="agi"><br>
 		<span class="l"></span>: <input type="number" min=0.0 max=1.0 step=0.01 id="theme_alpha_bg" class="agi"><br>
 		<span class="l"></span>: <input type="text" id="theme_color_bg" maxlength="9" class="agi"><br>
-		<span class="l">BG image URL</span>: <input type="text" id="theme_bg_url" class="agi" oninput="checkRandomBg()" checked><br>
-		<span class="l">Random BG image</span>: <input type="checkbox" id="theme_bg_random" class="agi cb" onchange="setRandomBg()" checked><br>
+		<span class="l">Link ảnh nền:</span>: <input type="text" id="theme_bg_url" class="agi" oninput="checkRandomBg()" checked><br>
+		<span class="l">Hình nền ngẫu nhiên</span>: <input type="checkbox" id="theme_bg_random" class="agi cb" onchange="setRandomBg()" checked><br>
 		<input id="theme_base" class="agi" style="display:none">
 		<span class="l"></span>: <input type="checkbox" id="comp_css" class="agi cb"><br>
 		<div id="skin">Custom CSS: <input type="file" name="data" accept=".css"> <input type="button" value="Upload" onclick="uploadFile(d.Sf.data,'/skin.css');"><br></div>
@@ -295,7 +295,7 @@
 		<div id="holidays">Holidays: <input type="file" name="data2" accept=".json"> <input type="button" value="Upload" onclick="uploadFile(d.Sf.data2,'/holidays.json');"><br></div>
 		<div id="toast"></div>
 		<hr><button type="button" onclick="cLS()">Clear local storage</button>
-		<hr><button type="button" onclick="B()">Back</button><button type="button" onclick="Save()">Save</button>
+		<hr><button type="button" onclick="B()">Quay về</button><button type="button" onclick="Save()">Lưu cài đặt</button>
 	</form>
 </body>
 </html>

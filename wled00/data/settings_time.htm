@@ -164,13 +164,13 @@
 <body onload="S()">
 	<form id="form_s" name="Sf" method="post" onsubmit="Wd()">
 		<div class="toprow">
-		<div class="helpB"><button type="button" onclick="H()">?</button></div>
+		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
 		<button type="button" onclick="B()">Back</button><button type="submit">Save</button><hr>
 		</div>
-		<h2>Time setup</h2>
-		Get time from NTP server: <input type="checkbox" name="NT" checked><br>
+		<h2>Cài đặt thời gian</h2>
+		Lấy thời gian từ NTP server: <input type="checkbox" name="NT" checked><br>
 		<input type="text" name="NS" maxlength="32"><br>
-		Use 24h format: <input type="checkbox" name="CF"><br>
+		Thời gian kiểu 24h: <input type="checkbox" name="CF" checked><br>
 		Time zone: 
 		<select name="TZ">
 			<option value="0" selected>VN (HCM/HN)</option>

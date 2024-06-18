@@ -6,7 +6,7 @@
 	<meta name="theme-color" content="#222222">
 	<meta content="yes" name="apple-mobile-web-app-capable">
 	<link rel="shortcut icon" href="favicon-32x32.png"/>
-	<title>ARGB-bangnguyendev</title>
+	<title>ARGB-HappySmartLight</title>
 	<script>
 	function feedback(){}
 	// instead of including [script src="iro.js"][/script] and [script src="rangetouch.js"][/script]
@@ -54,7 +54,7 @@
 </head>
 <body>
 
-<div id="cv" class="overlay">Loading ARGB UI...</div>
+<div id="cv" class="overlay">Đang mở giao diện ARGB...</div>
 <noscript><div class="overlay" style="opacity:1;">Sorry, ARGB UI needs JavaScript!</div></noscript>
 <div id="bg"></div>
 
@@ -62,16 +62,16 @@
 	<div class="tab top">
 		<div class="btnwrap">
 			<button id="buttonPower" onclick="togglePower()" class="tgl"><i class="icons">&#xe08f;</i><p class="tab-label">Power</p></button>
-			<button id="buttonNl" onclick="toggleNl()"><i class="icons">&#xe2a2;</i><p class="tab-label">Timer</p></button>
-			<button id="buttonSync" onclick="toggleSync()"><i class="icons">&#xe116;</i><p class="tab-label">Sync</p></button>
-			<button id="buttonSr" onclick="toggleLiveview()"><i class="icons">&#xe410;</i><p class="tab-label">Peek</p></button>
-			<button id="buttonI" onclick="toggleInfo()"><i class="icons">&#xe066;</i><p class="tab-label">Info</p></button>
-			<button id="buttonNodes" onclick="toggleNodes()"><i class="icons">&#xe22d;</i><p class="tab-label">Nodes</p></button>
-			<button onclick="window.location.href=getURL('/settings');"><i class="icons">&#xe0a2;</i><p class="tab-label">Config</p></button>
-			<button id="buttonPcm" onclick="togglePcMode(true)"><i class="icons">&#xe23d;</i><p class="tab-label">PC Mode</p></button>
+			<button id="buttonNl" onclick="toggleNl()"><i class="icons">&#xe2a2;</i><p class="tab-label">Hẹn giờ</p></button>
+			<button id="buttonSync" onclick="toggleSync()"><i class="icons">&#xe116;</i><p class="tab-label">Đồng bộ</p></button>
+			<button id="buttonSr" onclick="toggleLiveview()"><i class="icons">&#xe410;</i><p class="tab-label">Xem thử</p></button>
+			<button id="buttonI" onclick="toggleInfo()"><i class="icons">&#xe066;</i><p class="tab-label">Thông tin</p></button>
+			<button id="buttonNodes" onclick="toggleNodes()"><i class="icons">&#xe22d;</i><p class="tab-label">Môđun khác</p></button>
+			<button onclick="window.location.href=getURL('/settings');"><i class="icons">&#xe0a2;</i><p class="tab-label">Cấu hình</p></button>
+			<button id="buttonPcm" onclick="togglePcMode(true)"><i class="icons">&#xe23d;</i><p class="tab-label">Giao diện PC</p></button>
 		</div>
 		<div id="briwrap">
-			<p class="hd">Brightness</p>
+			<p class="hd">Độ sáng</p>
 			<div class="slider" style="padding-right:32px;">
 				<i class="icons slider-icon" onclick="tglTheme()" style="transform: translate(-32px,5px);">&#xe2a6;</i>
 				<div class="sliderwrap il">
@@ -180,7 +180,7 @@
 			<input id="hexc" type="text" class="noslide" onkeydown="hexEnter()" autocomplete="off" maxlength="8" />
 			<button id="hexcnf" class="btn btn-xs" onclick="fromHex();"><i class="icons btn-icon">&#xe390;</i></button>
 		</div>
-		<p class="labels" id="pall"><i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Color palette</p>
+		<p class="labels" id="pall"><i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i>Palette màu</p>
 		<div id="palw" class="il">
 			<div class="staytop fnd">
 				<input type="text" placeholder="Search" oninput="search(this,'pallist')" onfocus="search(this,'pallist')" />
@@ -208,7 +208,7 @@
 
 	<div id="Effects" class="tabcontent">
 		<div id="fx">
-			<p class="labels hd" id="modeLabel">Effect mode</p>
+			<p class="labels hd" id="modeLabel">Hiệu ứng</p>
 			<div class="staytop fnd" id="fxFind">
 				<input type="text" placeholder="Search" oninput="search(this,'fxlist')" onfocus="search(this,'fxlist');gId('filters').classList.add('fade');" onblur="gId('filters').classList.remove('fade')"/>
 				<i class="icons clear-icon" onclick="clean(this);">&#xe38f;</i>
@@ -346,8 +346,8 @@
 </div>
 
 <div class="tab bot" id="bot">
-	<button class="tablinks" onclick="openTab(0)"><i class="icons">&#xe2b3;</i><p class="tab-label">Colors</p></button>
-	<button class="tablinks" onclick="openTab(1)"><i class="icons">&#xe23d;</i><p class="tab-label">Effects</p></button>
+	<button class="tablinks" onclick="openTab(0)"><i class="icons">&#xe2b3;</i><p class="tab-label">Màu</p></button>
+	<button class="tablinks" onclick="openTab(1)"><i class="icons">&#xe23d;</i><p class="tab-label">Hiệu ứng</p></button>
 	<button class="tablinks" onclick="openTab(2)"><i class="icons">&#xe34b;</i><p class="tab-label">Segments</p></button>
 	<button class="tablinks" onclick="openTab(3)"><i class="icons">&#xe04c;</i><p class="tab-label">Presets</p></button>
 </div>
