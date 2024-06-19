@@ -71,7 +71,7 @@
 			<button id="buttonPcm" onclick="togglePcMode(true)"><i class="icons">&#xe23d;</i><p class="tab-label">Giao diện PC</p></button>
 		</div>
 		<div id="briwrap">
-			<p class="hd">Độ sáng</p>
+			<p class="hd">🔅 Độ sáng đèn💡 🔆</p>
 			<div class="slider" style="padding-right:32px;">
 				<i class="icons slider-icon" onclick="tglTheme()" style="transform: translate(-32px,5px);">&#xe2a6;</i>
 				<div class="sliderwrap il">
@@ -180,7 +180,7 @@
 			<input id="hexc" type="text" class="noslide" onkeydown="hexEnter()" autocomplete="off" maxlength="8" />
 			<button id="hexcnf" class="btn btn-xs" onclick="fromHex();"><i class="icons btn-icon">&#xe390;</i></button>
 		</div>
-		<p class="labels" id="pall"><i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i>Bảng màu</p>
+		<p class="labels" id="pall"><i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Bảng màu</p>
 		<div id="palw" class="il">
 			<div class="staytop fnd">
 				<input type="text" placeholder="Search" oninput="search(this,'pallist')" onfocus="search(this,'pallist')" />
@@ -208,7 +208,7 @@
 
 	<div id="Effects" class="tabcontent">
 		<div id="fx">
-			<p class="labels hd" id="modeLabel">Hiệu ứng</p>
+			<p class="labels hd" id="modeLabel">✨Hiệu ứng✨</p>
 			<div class="staytop fnd" id="fxFind">
 				<input type="text" placeholder="Search" oninput="search(this,'fxlist')" onfocus="search(this,'fxlist');gId('filters').classList.add('fade');" onblur="gId('filters').classList.remove('fade')"/>
 				<i class="icons clear-icon" onclick="clean(this);">&#xe38f;</i>
@@ -362,10 +362,10 @@
 	</div>
 	<div id="kv">Loading...</div><br>
 	<div>
-		<button class="btn infobtn" onclick="requestJson()">Refresh</button>
-		<button class="btn infobtn" onclick="toggleNodes()">Instance List</button>
-		<button class="btn infobtn" onclick="window.open(getURL('/update'),'_self');">Update ARGB</button>
-		<button class="btn infobtn" id="resetbtn" onclick="cnfReset()">Reboot ARGB</button>
+		<button class="btn infobtn" onclick="requestJson()">Làm mới số liệu</button>
+		<button class="btn infobtn" onclick="toggleNodes()">Danh sách Nodes</button>
+		<button class="btn infobtn" onclick="window.open(getURL('/update'),'_self');">Cập nhật firmware⚠️</button>
+		<button class="btn infobtn" id="resetbtn" onclick="cnfReset()">Khởi động lại🍀</button>
 	</div>
 	<br>
 	<span class="h">Modified with <span id="heart">&#10084;&#xFE0E;</span> by bangnguyendev</span>
@@ -373,10 +373,10 @@
 
 <div id="nodes" class="modal">
 	<button class="btn btn-xs close" onclick="toggleNodes()"><i class="icons rot45">&#xe18a;</i></button>
-	<div id="ndlt">ARGB instances</div>
-	<div id="kn">Loading...</div>
+	<div id="ndlt">Các thiết bị trong hệ sinh thái</div>
+	<div id="kn">Đang tải danh sách...</div>
 	<div style="position:sticky;bottom:0;">
-		<button class="btn infobtn" onclick="loadNodes()">Refresh</button>
+		<button class="btn infobtn" onclick="loadNodes()">Làm mới danh sách</button>
 	</div>	
 </div>
 
@@ -387,11 +387,11 @@
 <div id="rover" class="modal">
 	<i class="icons huge">&#xe410;</i><br>
 	<div id="lv">?</div><br><br>
-	To use built-in effects, use an override button below.<br>
-	You can return to realtime mode by pressing the star in the top left corner.<br>
-	<button class="btn" onclick="setLor(1)">Override once</button>
-	<button class="btn" onclick="setLor(2)">Override until reboot</button><br>
-	<span class="h">For best performance, it is recommended to turn off the streaming source when not in use.</span>
+	Để sử dụng các hiệu ứng✨ tích hợp, hãy sử dụng nút ghi đè bên dưới.<br>
+	Bạn có thể quay lại chế độ thời gian thực bằng cách nhấn vào ngôi sao⭐ ở góc trên cùng bên trái.<br>
+	<button class="btn" onclick="setLor(1)">Ghi đè một lần</button>
+	<button class="btn" onclick="setLor(2)">Ghi đè cho đến khi khởi động lại</button><br>
+	<span class="h">Để có hiệu suất tốt nhất, nên tắt nguồn phát trực tuyến khi không sử dụng.</span>
 </div>
 
 <i id="roverstar" class="icons huge" onclick="setLor(0)">&#xe410;</i><br>

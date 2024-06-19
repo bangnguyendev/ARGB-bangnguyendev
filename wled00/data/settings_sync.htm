@@ -89,6 +89,8 @@
 <button type="button" onclick="B()">Back</button><button type="submit">Save</button><hr>
 </div>
 <h2>Sync setup</h2>
+<h2>Thuộc tính trang nâng cao dành cho người am hiểu</h2>
+<hr>
 <h3>ARGB Broadcast</h3>
 UDP Port: <input name="UP" type="number" min="1" max="65535" class="d5" required><br>
 2nd Port: <input name="U2" type="number" min="1" max="65535" class="d5" required><br>
@@ -176,7 +178,7 @@ DMX mode:
 <option value=6>Multi RGBW</option>
 <option value=10>Preset</option>
 </select><br>
-<a href="https://kno.wled.ge/interfaces/e1.31-dmx/" target="_blank">E1.31 info</a><br>
+<!-- <a href="https://kno.wled.ge/interfaces/e1.31-dmx/" target="_blank">E1.31 info</a><br> -->
 Timeout: <input name="ET" type="number" min="1" max="65000" required> ms<br>
 Force max brightness: <input type="checkbox" name="FB"><br>
 Disable realtime gamma correction: <input type="checkbox" name="RG"><br>
@@ -215,7 +217,8 @@ Device Topic: <input type="text" name="MD" maxlength="32"><br>
 Group Topic: <input type="text" name="MG" maxlength="32"><br>
 Publish on button press: <input type="checkbox" name="BM"><br>
 Retain brightness & color messages: <input type="checkbox" name="RT"><br>
-<i>Reboot required to apply changes. </i><a href="https://kno.wled.ge/interfaces/mqtt/" target="_blank">MQTT info</a>
+<i>Reboot required to apply changes. </i>
+<!-- <a href="https://kno.wled.ge/interfaces/mqtt/" target="_blank">MQTT info</a> -->
 </div>
 <h3>Philips Hue</h3>
 <div id="NoHue" class="hide">

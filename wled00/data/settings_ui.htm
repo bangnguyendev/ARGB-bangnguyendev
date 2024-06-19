@@ -212,7 +212,7 @@
 	function getURL(path) {
 		return (loc ? locproto + "//" + locip : "") + path;
 	}
-	function H() { window.open("https://kno.wled.ge/features/settings/#user-interface-settings"); }
+	// function H() { window.open("https://kno.wled.ge/features/settings/#user-interface-settings"); }
 	function B() { window.open(getURL("/settings"),"_self"); }
 	function UI()
 	{
@@ -255,15 +255,15 @@
 	<form id="form_s" name="Sf" method="post">
 		<div class="toprow">
 		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
-		<button type="button" onclick="B()">Quay về</button><button type="button" onclick="Save()">Lưu cài đặt</button><br>
+		<button type="button" onclick="B()">↩️Quay về</button><button type="button" onclick="Save()">✅Lưu cài đặt</button><br>
 		<span id="lssuc" style="color:green; display:none">&#10004; Giao diện được lưu!</span>
-		<span id="lserr" style="color:red; display:none">&#9888; Could not access local storage. Make sure it is enabled in your browser.</span><hr>
+		<span id="lserr" style="color:red; display:none">&#9888; Không thể truy cập bộ nhớ cục bộ. Hãy chắc chắn rằng nó được kích hoạt trong trình duyệt của bạn.</span><hr>
 		</div>
 		<h2>Cài đặt giao diện</h2>
 		Tên thiết bị: <input type="text" name="DS" maxlength="32"><br>
 		Sync button toggles both send and receive: <input type="checkbox" name="ST"><br>
 		<div id="NoSimple" class="hide">
-			<i class="warn">This firmware build does not include simplified UI support.<br></i>
+			<i class="warn">Bản dựng chương trình cơ sở này không bao gồm hỗ trợ giao diện người dùng đơn giản.<br></i>
 		</div>
 		<div id="Simple">Enable simplified UI: <input type="checkbox" name="SU"><br></div>
 		<i>Các cài đặt tùy chỉnh giao diện người dùng sau đây là duy nhất cho cả thiết bị ARGB và trình duyệt này.<br>
@@ -294,8 +294,8 @@
 		<span class="l"></span>: <input type="checkbox" id="comp_hdays" class="agi cb"><br>
 		<div id="holidays">Holidays: <input type="file" name="data2" accept=".json"> <input type="button" value="Upload" onclick="uploadFile(d.Sf.data2,'/holidays.json');"><br></div>
 		<div id="toast"></div>
-		<hr><button type="button" onclick="cLS()">Clear local storage</button>
-		<hr><button type="button" onclick="B()">Quay về</button><button type="button" onclick="Save()">Lưu cài đặt</button>
+		<hr><button type="button" onclick="cLS()">Xóa bộ nhớ cục bộ</button>
+		<hr><button type="button" onclick="B()">↩️Quay về</button><button type="button" onclick="Save()">✅Lưu cài đặt</button>
 	</form>
 </body>
 </html>

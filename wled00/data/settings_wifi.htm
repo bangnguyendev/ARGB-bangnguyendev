@@ -151,7 +151,7 @@
 	<form id="form_s" name="Sf" method="post">
 		<div class="toprow">
 		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
-		<button type="button" onclick="B()">Quay về</button><button type="submit">Lưu & Kết nối</button><hr>
+		<button type="button" onclick="B()">↩️Quay về</button><button type="submit">✅Lưu & Kết nối</button><hr>
 		</div>
 		<h2>WiFi Cài đặt</h2>
 		<h3>Kết nối với mạng đang có</h3>
@@ -159,6 +159,7 @@
 		Tên mạng Wifi (SSID):<br>
 		<input type="text" id="CS" name="CS" maxlength="32"><br>
 		Mật khẩu mạng Wifi: <br> <input type="password" name="CP" maxlength="63"><br>
+		<b>⚠️Không khuyến khích cài đặt các mục Static nếu không hiểu chúng!!!</b>
 		Static IP (leave at 0.0.0.0 for DHCP):<br>
 		<input name="I0" type="number" class="s" min="0" max="255" required> .
 		<input name="I1" type="number" class="s" min="0" max="255" required> .
@@ -190,22 +191,24 @@
 		<option value="2">Luôn mở</option>
 		<option value="3">Không bao giờ (không khuyến khích)</option></select><br>
 		AP IP: <span class="sip"> Not active </span><br>
+
 		<hr>
 		<h3>Experimental</h3>
 		Force 802.11g mode (ESP8266 only): <input type="checkbox" name="FG"><br>
 		Disable WiFi sleep: <input type="checkbox" name="WS"><br>
-		<i>Can help with connectivity issues.<br>
-		Do not enable if WiFi is working correctly, increases power consumption.</i>
+		<i>Mục này trợ giúp về vấn đề kết nối<br>
+		Tuy nhien, không bật nếu WiFi hoạt động bình thường, làm tăng mức tiêu thụ điện năng.</i>
 
 		<hr>
 		<div id="remd">
 			<h3>Wireless Remote</h3>
-			<i>Listen for events over ESP-NOW<br>
-			Keep disabled if not using a remote, increases power consumption.<br></i>
+			<i>Nghe các sự kiện qua ESP-NOW<br>
+			⚠️Đây là tính năng điều khiển thông qua SÓNG WIFI của một bo mạch khác, KHÔNG PHẢI REMOTE!<br>
+			Tắt tính năng này nếu không sử dụng điều khiển từ xa bằng ESP-NOW, làm tăng mức tiêu thụ điện năng.<br></i>
 		
-			Enable Remote: <input type="checkbox" name="RE"><br>
-			Hardware MAC: <input type="text" name="RMAC"><br>
-			Last Seen: <span class="rlid">None</span> <br>
+			Kích hoạt điều khiển từ xa: <input type="checkbox" name="RE"><br>
+			MAC phần cứng: <input type="text" name="RMAC"><br>
+			Nhìn thấy lần cuối: <span class="rlid">None</span> <br>
 		</div>
 
 		<div id="ethd">
@@ -225,7 +228,7 @@
 			</select><br><br>
 		</div>
 		<hr>
-		<button type="button" onclick="B()">Quay về</button><button type="submit">Lưu & Kết nối</button>
+		<button type="button" onclick="B()">↩️Quay về</button><button type="submit">✅Lưu & Kết nối</button>
 	</form>
 </body>
 </html>

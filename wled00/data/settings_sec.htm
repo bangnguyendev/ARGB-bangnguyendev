@@ -102,7 +102,7 @@
 	<form id="form_s" name="Sf" method="post">
 		<div class="toprow">
 		<!-- <div class="helpB"><button type="button" onclick="H()">?</button></div> -->
-		<button type="button" onclick="B()">Quay về</button><button type="submit">Lưu cài đặt</button><hr>
+		<button type="button" onclick="B()">↩️Quay về</button><button type="submit">✅Lưu cài đặt</button><hr>
 		</div>
 		<h2>Bảo mật & Cập nhật</h2>
 		Mã PIN cho phép "Cài đặt": <input type="password" id="PIN" name="PIN" size="4" maxlength="4" minlength="4" onkeydown="checkNum(this)" pattern="[0-9]*" inputmode="numeric" title="Please enter a 4 digit number"><br>
@@ -114,7 +114,7 @@
 		<b>Vô hiệu hóa OTA khi không sử dụng, nếu không kẻ tấn công có thể khởi động lại phần mềm thiết bị!</b><br>
 		<i>Settings on this page are only changable if OTA lock is disabled!</i><br>
 		Từ chối quyền truy cập vào "WiFi Cài đặt" nếu bị khóa OTA: <input type="checkbox" name="OW"><br><br>
-		Đưa về cài đặt gốc (Chọn & Lưu cài đặt): <input type="checkbox" name="RS"><br>
+		Đưa về cài đặt gốc (Chọn & ✅Lưu cài đặt): <input type="checkbox" name="RS"><br>
 		Tất cả cài đặt và preset sẽ bị xóa hoàn toàn.<br><br>
 		<div class="warn">&#9888; Truyền không được mã hóa. Kẻ tấn công trên cùng một mạng có thể chặn dữ liệu biểu mẫu!</div>
 		<hr>
@@ -129,13 +129,13 @@
 		<div>Khôi phục cấu hình<br><input type="file" name="data2" accept=".json"> <button type="button" onclick="uploadFile(d.Sf.data2,'/cfg.json');">Upload</button><br></div>
 		<div class="warn">&#9888; Việc khôi phục các cài đặt trước/cấu hình sẽ GHI ĐÈ các cài đặt/cấu hình hiện tại của bạn.<br>
 		Cấu hình không chính xác có thể yêu cầu khôi phục cài đặt gốc hoặc flash lại bo mạch ARGB của bạn.</div>
-		Vì lý do bảo mật, mật khẩu không được sao lưu.
+		<b>Vì lý do bảo mật, mật khẩu không được sao lưu.</b>
 		<hr>
 		<h3>About</h3>
 		<a href="https://github.com/bangnguyendev/ARGB-bangnguyendev/" target="_blank">ARGB-bangnguyendev</a> version ##VERSION##<!-- Autoreplaced from package.json -->
 		<br>
 		<div id="toast"></div>
-		<button type="button" onclick="B()">Quay về</button><button type="submit">Lưu cài đặt</button>
+		<button type="button" onclick="B()">↩️Quay về</button><button type="submit">✅Lưu cài đặt</button>
 	</form>
 </body>
 </html>

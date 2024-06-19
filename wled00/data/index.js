@@ -675,21 +675,21 @@ function populateInfo(i)
 	// if (i.ver.includes("-bl")) vcn = "beta";
 	if (i.cn) vcn = i.cn;
 
-	cn += `${vcn} - v${i.ver}<br><br><table>
+	cn += `${vcn} - v${i.ver} - VN<br><br><table>
 ${urows}
 ${urows===""?'':'<tr><td colspan=2><hr style="height:1px;border-width:0;color:gray;background-color:gray"></td></tr>'}
 ${i.opt&0x100?inforow("Debug","<button class=\"btn btn-xs\" onclick=\"requestJson({'debug':"+(i.opt&0x0080?"false":"true")+"});\"><i class=\"icons "+(i.opt&0x0080?"on":"off")+"\">&#xe08f;</i></button>"):''}
-${inforow("Build",i.vid)}
-${inforow("Signal strength",i.wifi.signal +"% ("+ i.wifi.rssi, " dBm)")}
-${inforow("Uptime",getRuntimeStr(i.uptime))}
-${inforow("Time",i.time)}
+${inforow("Bản dựng",i.vid)}
+${inforow("Tín hiệu WiFi",i.wifi.signal +"% ("+ i.wifi.rssi, " dBm)")}
+${inforow("Thời gian hoạt động",getRuntimeStr(i.uptime))}
+${inforow("Giờ hệ thống",i.time)}
 ${inforow("Free heap",heap," kB")}
 ${i.psram?inforow("Free PSRAM",(i.psram/1024).toFixed(1)," kB"):""}
 ${inforow("Estimated current",pwru)}
-${inforow("Average FPS",i.leds.fps)}
-${inforow("MAC address",i.mac)}
-${inforow("Filesystem",i.fs.u + "/" + i.fs.t + " kB (" +Math.round(i.fs.u*100/i.fs.t) + "%)")}
-${inforow("Environment",i.arch + " " + i.core + " (" + i.lwip + ")")}
+${inforow("FPS trung bình",i.leds.fps)}
+${inforow("Địa chỉ MAC",i.mac)}
+${inforow("Dung lượng FS",i.fs.u + "/" + i.fs.t + " kB (" +Math.round(i.fs.u*100/i.fs.t) + "%)")}
+${inforow("Core Chip",i.arch + " " + i.core + " (" + i.lwip + ")")}
 </table>`;
 	gId('kv').innerHTML = cn;
 	//  update all sliders in Info
@@ -1572,10 +1572,10 @@ function setEffectParameters(idx)
 			paOnOff[0] = paOnOff[0].substring(0,dPos);
 		}
 		if (paOnOff.length>0 && paOnOff[0] != "!") pall.innerHTML = paOnOff[0];
-		else                                       pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i>Bảng màu';
+		else                                       pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Bảng màu';
 	} else {
 		// disable palette list
-		pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i>Bảng màu không sử dụng';
+		pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Bảng màu không sử dụng';
 		palw.style.display = "none";
 	}
 	// not all color selectors shown, hide palettes created from color selectors
@@ -1676,9 +1676,9 @@ function toggleNl()
 	nlA = !nlA;
 	if (nlA)
 	{
-		showToast(`Timer active. Your light will turn ${nlTar > 0 ? "on":"off"} ${nlMode ? "over":"after"} ${nlDur} minutes.`);
+		showToast(`Hẹn giờ đang hoạt động. Đèn của bạn sẽ ${nlTar > 0 ? "bật":"tắt"} ${nlMode ? "hơn":"sau"} ${nlDur} phút.`);
 	} else {
-		showToast('Timer deactivated.');
+		showToast('Bộ hẹn giờ đã bị vô hiệu hóa.');
 	}
 	var obj = {"nl": {"on": nlA}};
 	requestJson(obj);
@@ -1687,8 +1687,8 @@ function toggleNl()
 function toggleSync()
 {
 	syncSend = !syncSend;
-	if (syncSend) showToast('Other lights in the network will now sync to this one.');
-	else showToast('This light and other lights in the network will no longer sync.');
+	if (syncSend) showToast('Các đèn khác trong mạng bây giờ sẽ đồng bộ hóa với đèn này.');
+	else showToast('Đèn này và các đèn khác trong mạng sẽ không còn đồng bộ nữa.');
 	var obj = {"udpn": {"send": syncSend}};
 	if (syncTglRecv) obj.udpn.recv = syncSend;
 	requestJson(obj);
@@ -2611,7 +2611,7 @@ setInterval(()=>{
 	gId('heart').style.color = `hsl(${hc}, 100%, 50%)`;
 }, 910);
 
-function openGH() { window.open("https://github.com/Aircoookie/WLED/wiki"); }
+function openGH() { window.open("https://bangnguyendev.com/Topic/ARGB-LED/index"); }
 
 var cnfr = false;
 function cnfReset()
