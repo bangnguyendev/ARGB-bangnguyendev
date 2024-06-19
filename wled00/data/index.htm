@@ -183,7 +183,7 @@
 		<p class="labels" id="pall"><i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Bảng màu</p>
 		<div id="palw" class="il">
 			<div class="staytop fnd">
-				<input type="text" placeholder="Search" oninput="search(this,'pallist')" onfocus="search(this,'pallist')" />
+				<input type="text" placeholder="Tìm kiếm" oninput="search(this,'pallist')" onfocus="search(this,'pallist')" />
 				<i class="icons clear-icon" onclick="clean(this)">&#xe38f;</i>
 				<i class="icons search-icon">&#xe0a1;</i>
 			</div>
@@ -210,7 +210,7 @@
 		<div id="fx">
 			<p class="labels hd" id="modeLabel">✨Hiệu ứng✨</p>
 			<div class="staytop fnd" id="fxFind">
-				<input type="text" placeholder="Search" oninput="search(this,'fxlist')" onfocus="search(this,'fxlist');gId('filters').classList.add('fade');" onblur="gId('filters').classList.remove('fade')"/>
+				<input type="text" placeholder="Tìm kiếm" oninput="search(this,'fxlist')" onfocus="search(this,'fxlist');gId('filters').classList.add('fade');" onblur="gId('filters').classList.remove('fade')"/>
 				<i class="icons clear-icon" onclick="clean(this);">&#xe38f;</i>
 				<i class="icons search-icon" onclick="gId('filters').classList.toggle('hide');" style="cursor:pointer;">&#xe0a1;</i>
 			</div>
@@ -260,7 +260,7 @@
 					<div class="sliderdisplay"></div>
 				</div>
 				<output class="sliderbubble"></output>
-				<span id="sliderLabel0" class="tooltiptext">Effect speed</span>
+				<span id="sliderLabel0" class="tooltiptext">Tốc độ hiệu ứng</span>
 			</div>
 			<div id="slider1" class="slider">
 				<i class="icons slider-icon" onclick="tglLabels()">&#xe409;</i>
@@ -269,7 +269,7 @@
 					<div class="sliderdisplay"></div>
 				</div>
 				<output class="sliderbubble"></output>
-				<span class="tooltiptext" id="sliderLabel1">Effect intensity</span>
+				<span class="tooltiptext" id="sliderLabel1">Cường độ hiệu ứng</span>
 			</div>
 			<div id="slider2" class="slider hide">
 				<i class="icons slider-icon">&#xe410;</i>
@@ -322,7 +322,7 @@
 		<div id="segutil" class="staybot">
 		</div>
 		<div id="segutil2">
-			<button class="btn btn-s" id="rsbtn" onclick="rSegs()">Reset segments</button>
+			<button class="btn btn-s" id="rsbtn" onclick="rSegs()">Đặt lại chia Leds</button>
 		</div>
 		<p>Transition: <input id="tt" type="number" min="0" max="65.5" step="0.1" value="0.7">&nbsp;s</p>
 		<p id="ledmap" class="hide"></p>
@@ -333,7 +333,7 @@
 		</div>
 		<p class="labels hd">Presets</p>
 		<div class="staytop fnd" id="psFind">
-			<input type="text" placeholder="Search" oninput="search(this,'pcont')" onfocus="search(this,'pcont')" />
+			<input type="text" placeholder="Tìm kiếm" oninput="search(this,'pcont')" onfocus="search(this,'pcont')" />
 			<i class="icons clear-icon" onclick="clean(this);">&#xe38f;</i>
 			<i class="icons search-icon">&#xe0a1;</i>
 		</div>
@@ -348,7 +348,7 @@
 <div class="tab bot" id="bot">
 	<button class="tablinks" onclick="openTab(0)"><i class="icons">&#xe2b3;</i><p class="tab-label">Màu</p></button>
 	<button class="tablinks" onclick="openTab(1)"><i class="icons">&#xe23d;</i><p class="tab-label">Hiệu ứng</p></button>
-	<button class="tablinks" onclick="openTab(2)"><i class="icons">&#xe34b;</i><p class="tab-label">Segments</p></button>
+	<button class="tablinks" onclick="openTab(2)"><i class="icons">&#xe34b;</i><p class="tab-label">Chia đoạn</p></button>
 	<button class="tablinks" onclick="openTab(3)"><i class="icons">&#xe04c;</i><p class="tab-label">Presets</p></button>
 </div>
 

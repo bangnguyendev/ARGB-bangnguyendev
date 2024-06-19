@@ -112,29 +112,36 @@
 		Để kích hoạt OTA, vì lý do bảo mật, bạn cũng cần nhập đúng mật khẩu!<br>
 		Nên thay đổi mật khẩu khi kích hoạt OTA.<br>
 		<b>Vô hiệu hóa OTA khi không sử dụng, nếu không kẻ tấn công có thể khởi động lại phần mềm thiết bị!</b><br>
-		<i>Settings on this page are only changable if OTA lock is disabled!</i><br>
-		Từ chối quyền truy cập vào "WiFi Cài đặt" nếu bị khóa OTA: <input type="checkbox" name="OW"><br><br>
-		
-		<h3 id="restore-happylight">Khôi phục cài đặt gốc</h3>
-		Đưa về cài đặt gốc (Chọn & ✅Lưu cài đặt): <input type="checkbox" name="RS"><br>
-		<i>Tất cả cài đặt và Preset sẽ bị xóa hoàn toàn.</i><br><br>
+		<i>Cài đặt trên trang này chỉ có thể thay đổi nếu khóa OTA bị tắt!</i><br>
+		⛔Cấm vào "Cài đặt WiFi" nếu bị khóa OTA: <input type="checkbox" name="OW" checked>
 		<div class="warn">&#9888; Truyền không được mã hóa. Kẻ tấn công trên cùng một mạng có thể chặn dữ liệu biểu mẫu!</div>
+		
 		<hr>
-		<h3>Software Update</h3>
+		<h3>Cập nhật phần mềm</h3>
+		<i>Hãy chuẩn bị tệp tin phần mềm <b>ARGB_XXX_XXX_VN.bin</b></i><br>
 		<button type="button" onclick="U()">Cập nhật OTA thủ công</button><br>
-		Enable ArduinoOTA: <input type="checkbox" name="AO">
+		Kích hoạt ArduinoOTA: <input type="checkbox" name="AO">
+
 		<hr>
 		<h3>Sao lưu & Khôi phục</h3>
-		<a class="btn lnk" id="bckcfg" href="/presets.json" download="presets">Sao lưu presets</a><br>
-		<div>Khôi phục presets<br><input type="file" name="data" accept=".json"> <button type="button" onclick="uploadFile(d.Sf.data,'/presets.json');">Upload</button><br></div><br>
-		<a class="btn lnk" id="bckpresets" href="/cfg.json" download="cfg">Backup configuration</a><br>
-		<div>Khôi phục cấu hình<br><input type="file" name="data2" accept=".json"> <button type="button" onclick="uploadFile(d.Sf.data2,'/cfg.json');">Upload</button><br></div>
-		<div class="warn">&#9888; Việc khôi phục các cài đặt trước/cấu hình sẽ GHI ĐÈ các cài đặt/cấu hình hiện tại của bạn.<br>
-		Cấu hình không chính xác có thể yêu cầu <a href="#restore-happylight"><b>Đưa về cài đặt gốc</b></a> hoặc flash lại bo mạch ARGB của bạn.</div>
+		<a class="btn lnk" id="bckcfg" href="/presets.json" download="presets">Sao lưu Presets</a><br><br>
+		<div>Khôi phục presets:<br><input type="file" name="data" accept=".json"> <button type="button" onclick="uploadFile(d.Sf.data,'/presets.json');">Khôi phục</button><br></div><br>
+		<a class="btn lnk" id="bckpresets" href="/cfg.json" download="cfg">Sao lưu Cấu hình</a><br><br>
+		<div>Khôi phục cấu hình:<br><input type="file" name="data2" accept=".json"> <button type="button" onclick="uploadFile(d.Sf.data2,'/cfg.json');">Khôi phục</button><br></div>
+		<div class="warn">&#9888; Việc khôi phục các Preset hoặc Cấu hình sẽ GHI ĐÈ các Preset hoặc Cấu hình hiện tại của bạn.<br>
+		Nếu cấu hình không chính xác có thể yêu cầu <a href="#restore-happylight"><b>Đưa về cài đặt gốc</b></a> hoặc <a href="https://bangnguyendev.com/2024-05-10-Flash-firmware/"><b>flash lại bo mạch ARGB</b></a> của bạn.</div>
 		<b>Vì lý do bảo mật, mật khẩu không được sao lưu.</b>
+		
+		<hr>
+		<h3 id="restore-happylight">
+			<br><br>Khôi phục cài đặt gốc
+		</h3>
+		Đưa về cài đặt gốc (Chọn & ✅Lưu cài đặt): <input type="checkbox" name="RS"><br>
+		<i>⚠️⚠️⚠️ Tất cả Cài đặt và Preset sẽ bị xóa hoàn toàn.</i><br><br>
+
 		<hr>
 		<h3>About</h3>
-		<a href="https://github.com/bangnguyendev/ARGB-bangnguyendev/" target="_blank">ARGB-bangnguyendev</a> version ##VERSION##<!-- Autoreplaced from package.json -->
+		<a href="https://bangnguyendev.com/Topic/ARGB-LED/" target="_blank">ARGB-HappySmartLight</a> version ##VERSION##<!-- Autoreplaced from package.json -->
 		<br>
 		<div id="toast"></div>
 		<button type="button" onclick="B()">↩️Quay về</button><button type="submit">✅Lưu cài đặt</button>

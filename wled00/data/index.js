@@ -763,7 +763,7 @@ function populateSegments(s)
 				`</label>`+
 				`<div class="segname" onclick="selSegEx(${i})">`+
 					`<i class="icons e-icon frz" id="seg${i}frz" onclick="event.preventDefault();tglFreeze(${i});">&#x${inst.frz ? (li.live && li.liveseg==i?'e410':'e0e8') : 'e325'};</i>`+
-					(inst.n ? inst.n : "Segment "+i) +
+					(inst.n ? inst.n : "Chia đoạn Led "+i) +
 					`<div class="pop hide" onclick="event.preventDefault();event.stopPropagation();">`+
 						`<i class="icons g-icon" style="color:${cG};" onclick="this.nextElementSibling.classList.toggle('hide');">&#x278${String.fromCharCode(inst.set+"A".charCodeAt(0))};</i>`+
 						`<div class="pop-c hide"><span style="color:var(--c-f);" onclick="setGrp(${i},0);">&#x278A;</span><span style="color:var(--c-r);" onclick="setGrp(${i},1);">&#x278B;</span><span style="color:var(--c-g);" onclick="setGrp(${i},2);">&#x278C;</span><span style="color:var(--c-l);" onclick="setGrp(${i},3);">&#x278D;</span></div>`+
@@ -1158,7 +1158,7 @@ function updateLen(s)
 		var spc = parseInt(gId(`seg${s}spc`).value);
 		if (grp == 0) grp = 1;
 		var virt = Math.ceil(len/(grp + spc));
-		if (!isNaN(virt) && (grp > 1 || spc > 0)) out += ` (${virt} virtual)`;
+		if (!isNaN(virt) && (grp > 1 || spc > 0)) out += ` (có ${virt} Leds ảo)`;
 	}
 	if (isM && start >= mw*mh) out += " [strip]";
 
@@ -1396,7 +1396,7 @@ function readState(s,command=false)
 		hasCCT   = !!(lc & 0x04);
 	}
 	if (!i) {
-		showToast('No Segments!', true);
+		showToast('Không có chia đoạn Led!', true);
 		updateUI();
 		return true;
 	}
@@ -1427,22 +1427,22 @@ function readState(s,command=false)
 	  var errstr = "";
 	  switch (s.error) {
 		case 10:
-		  errstr = "Could not mount filesystem!";
+		  errstr = "Không thể gắn kết - mount hệ thống tập tin!";
 		  break;
 		case 11:
-		  errstr = "Not enough space to save preset!";
+		  errstr = "Không đủ dung lượng để lưu giá trị đặt trước!";
 		  break;
 		case 12:
-		  errstr = "Preset not found.";
+		  errstr = "Không tìm thấy giá trị đặt trước Preset.";
 		  break;
 		case 13:
-		  errstr = "Missing ir.json.";
+		  errstr = "Bị thiếu ir.json.";
 		  break;
 		case 19:
-		  errstr = "A filesystem error has occured.";
+		  errstr = "Đã xảy ra lỗi hệ thống tập tin.";
 		  break;
 		}
-	  showToast('Error ' + s.error + ": " + errstr, true);
+	  showToast('⚠️Error ' + s.error + ": " + errstr, true);
 	}
 
 	selectedPal = i.pal;
@@ -1491,9 +1491,9 @@ function setEffectParameters(idx)
 		// if (not controlDefined and for AC speed or intensity and for SR all sliders) or slider has a value
 		if ((!controlDefined && i < ((idx<128)?2:nSliders)) || (slOnOff.length>i && slOnOff[i] != "")) {
 			if (slOnOff.length>i && slOnOff[i]!="!") label.innerHTML = slOnOff[i];
-			else if (i==0)                           label.innerHTML = "Effect speed";
-			else if (i==1)                           label.innerHTML = "Effect intensity";
-			else                                     label.innerHTML = "Custom" + (i-1);
+			else if (i==0)                           label.innerHTML = "Tốc độ hiệu ứng";
+			else if (i==1)                           label.innerHTML = "Cường độ hiệu ứng";
+			else                                     label.innerHTML = "Tùy chỉnh" + (i-1);
 			slider.classList.remove('hide');
 		} else {
 			slider.classList.add('hide');
@@ -1756,7 +1756,7 @@ function makeSeg()
 	});
 	var cn = `<div class="seg lstI expanded">`+
 		`<div class="segin">`+
-			`<input type="text" id="seg${lu}t" autocomplete="off" maxlength=32 value="" placeholder="New segment ${lu}"/>`+
+			`<input type="text" id="seg${lu}t" autocomplete="off" maxlength=32 value="" placeholder="Chia đoạn Led mới ${lu}"/>`+
 			`<table class="segt">`+
 				`<tr>`+
 					`<td width="38%">${isM?'Start X':'Start LED'}</td>`+
@@ -1774,7 +1774,7 @@ function makeSeg()
 				`</tr>`+
 			`</table>`+
 			`<div class="h" id="seg${lu}len">${ledCount - ns} LEDs</div>`+
-			`<div class="c"><button class="btn btn-p" onclick="resetUtil()">Cancel</button></div>`+
+			`<div class="c"><button class="btn btn-p" onclick="resetUtil()">Hủy bỏ</button></div>`+
 		`</div>`+
 	`</div>`;
 	gId('segutil').innerHTML = cn;
@@ -1784,7 +1784,7 @@ function resetUtil(off=false)
 {
 	gId('segutil').innerHTML = `<div class="seg btn btn-s${off?' off':''}" style="padding:0;">`
 	+ '<label class="check schkl"><input type="checkbox" id="selall" onchange="selSegAll(this)"><span class="checkmark"></span></label>'
-	+ `<div class="segname" ${off?'':'onclick="makeSeg()"'}><i class="icons btn-icon">&#xe18a;</i>Add segment</div>`
+	+ `<div class="segname" ${off?'':'onclick="makeSeg()"'}><i class="icons btn-icon">&#xe18a;</i>Thêm đoạn mới</div>`
 	+ '<div class="pop hide" onclick="event.stopPropagation();">'
 	+ `<i class="icons g-icon" onclick="this.nextElementSibling.classList.toggle('hide');">&#xE34B;</i>`
 	+ '<div class="pop-c hide"><span style="color:var(--c-f);" onclick="selGrp(0);">&#x278A;</span><span style="color:var(--c-r);" onclick="selGrp(1);">&#x278B;</span><span style="color:var(--c-g);" onclick="selGrp(2);">&#x278C;</span><span style="color:var(--c-l);" onclick="selGrp(3);">&#x278D;</span></div>'
