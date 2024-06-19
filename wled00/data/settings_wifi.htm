@@ -157,9 +157,10 @@
 		<h3>Kết nối với mạng đang có</h3>
 		<button type="button" id="scan" onclick="N()">Tìm kiếm Wifi</button><br>
 		Tên mạng Wifi (SSID):<br>
+		<i>(để trống nếu không cần kết nối Wifi)</i><br>
 		<input type="text" id="CS" name="CS" maxlength="32"><br>
 		Mật khẩu mạng Wifi: <br> <input type="password" name="CP" maxlength="63"><br>
-		<b>⚠️Không khuyến khích cài đặt các mục Static nếu không hiểu chúng!!!</b>
+		<b>⚠️Không khuyến khích cài đặt các mục Static nếu không hiểu chúng!!!</b><br>
 		Static IP (leave at 0.0.0.0 for DHCP):<br>
 		<input name="I0" type="number" class="s" min="0" max="255" required> .
 		<input name="I1" type="number" class="s" min="0" max="255" required> .
@@ -193,16 +194,16 @@
 		AP IP: <span class="sip"> Not active </span><br>
 
 		<hr>
-		<h3>Experimental</h3>
-		Force 802.11g mode (ESP8266 only): <input type="checkbox" name="FG"><br>
-		Disable WiFi sleep: <input type="checkbox" name="WS"><br>
+		<h3>Experimental - Nâng cao</h3>
+		<!-- Force 802.11g mode (ESP8266 only): <input type="checkbox" name="FG"><br> -->
+		Tắt chế độ ngủ WiFi: <input type="checkbox" name="WS"><br>
 		<i>Mục này trợ giúp về vấn đề kết nối<br>
-		Tuy nhien, không bật nếu WiFi hoạt động bình thường, làm tăng mức tiêu thụ điện năng.</i>
+		Tuy nhiên, không ✔️ nếu WiFi hoạt động bình thường, làm tăng mức tiêu thụ điện năng.</i>
 
 		<hr>
 		<div id="remd">
-			<h3>Wireless Remote</h3>
-			<i>Nghe các sự kiện qua ESP-NOW<br>
+			<h3>Điều khiển thông qua Wifi</h3>
+			<i>Nghe các lệnh qua ESP-NOW<br>
 			⚠️Đây là tính năng điều khiển thông qua SÓNG WIFI của một bo mạch khác, KHÔNG PHẢI REMOTE!<br>
 			Tắt tính năng này nếu không sử dụng điều khiển từ xa bằng ESP-NOW, làm tăng mức tiêu thụ điện năng.<br></i>
 		

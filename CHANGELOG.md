@@ -1,7 +1,11 @@
 ## WLED changelog
 
+#### Build 240619VN
+-   ARGB 1.0.0 - 🇻🇳 release - porting from WLED 0.14.4 release
+-   bangnguyendev updated Web UI
+
 #### Build 2405100
--   WLED 1.0.1 release - porting from WLED 0.14.3 release
+-   ARGB 1.0.0 release - porting from WLED 0.14.3 release
 -   bangnguyendev updated Web UI
 
 #### Build 2404040

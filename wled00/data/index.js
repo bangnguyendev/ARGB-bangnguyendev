@@ -675,21 +675,21 @@ function populateInfo(i)
 	// if (i.ver.includes("-bl")) vcn = "beta";
 	if (i.cn) vcn = i.cn;
 
-	cn += `${vcn} - v${i.ver} - VN<br><br><table>
+	cn += `${vcn} - v${i.ver} - 🇻🇳<br><br><table>
 ${urows}
 ${urows===""?'':'<tr><td colspan=2><hr style="height:1px;border-width:0;color:gray;background-color:gray"></td></tr>'}
 ${i.opt&0x100?inforow("Debug","<button class=\"btn btn-xs\" onclick=\"requestJson({'debug':"+(i.opt&0x0080?"false":"true")+"});\"><i class=\"icons "+(i.opt&0x0080?"on":"off")+"\">&#xe08f;</i></button>"):''}
-${inforow("Bản dựng",i.vid)}
+${inforow("Bản dựng số",i.vid)}
 ${inforow("Tín hiệu WiFi",i.wifi.signal +"% ("+ i.wifi.rssi, " dBm)")}
 ${inforow("Thời gian hoạt động",getRuntimeStr(i.uptime))}
 ${inforow("Giờ hệ thống",i.time)}
 ${inforow("Free heap",heap," kB")}
 ${i.psram?inforow("Free PSRAM",(i.psram/1024).toFixed(1)," kB"):""}
-${inforow("Estimated current",pwru)}
+${inforow("Ước tính dòng tiêu thụ",pwru)}
 ${inforow("FPS trung bình",i.leds.fps)}
 ${inforow("Địa chỉ MAC",i.mac)}
 ${inforow("Dung lượng FS",i.fs.u + "/" + i.fs.t + " kB (" +Math.round(i.fs.u*100/i.fs.t) + "%)")}
-${inforow("Core Chip",i.arch + " " + i.core + " (" + i.lwip + ")")}
+${inforow("ChipCore ",i.arch + " " + i.core + " (" + i.lwip + ")")}
 </table>`;
 	gId('kv').innerHTML = cn;
 	//  update all sliders in Info
@@ -735,12 +735,12 @@ function populateSegments(s)
 		let staY = inst.startY;
 		let stoY = inst.stopY;
 		let isMSeg = isM && staX<mw*mh; // 2D matrix segment
-		let rvXck = `<label class="check revchkl">Reverse ${isM?'':'direction'}<input type="checkbox" id="seg${i}rev" onchange="setRev(${i})" ${inst.rev?"checked":""}><span class="checkmark"></span></label>`;
-		let miXck = `<label class="check revchkl">Mirror<input type="checkbox" id="seg${i}mi" onchange="setMi(${i})" ${inst.mi?"checked":""}><span class="checkmark"></span></label>`;
+		let rvXck = `<label class="check revchkl">Đảo ngược ${isM?'':'hướng'}<input type="checkbox" id="seg${i}rev" onchange="setRev(${i})" ${inst.rev?"checked":""}><span class="checkmark"></span></label>`;
+		let miXck = `<label class="check revchkl">Phân ảnh<input type="checkbox" id="seg${i}mi" onchange="setMi(${i})" ${inst.mi?"checked":""}><span class="checkmark"></span></label>`;
 		let rvYck = "", miYck ="";
 		if (isMSeg) {
-			rvYck = `<label class="check revchkl">Reverse<input type="checkbox" id="seg${i}rY" onchange="setRevY(${i})" ${inst.rY?"checked":""}><span class="checkmark"></span></label>`;
-			miYck = `<label class="check revchkl">Mirror<input type="checkbox" id="seg${i}mY" onchange="setMiY(${i})" ${inst.mY?"checked":""}><span class="checkmark"></span></label>`;
+			rvYck = `<label class="check revchkl">Đảo ngược<input type="checkbox" id="seg${i}rY" onchange="setRevY(${i})" ${inst.rY?"checked":""}><span class="checkmark"></span></label>`;
+			miYck = `<label class="check revchkl">Phân ảnh<input type="checkbox" id="seg${i}mY" onchange="setMiY(${i})" ${inst.mY?"checked":""}><span class="checkmark"></span></label>`;
 		}
 		let map2D = `<div id="seg${i}map2D" data-map="map2D" class="lbl-s hide">Expand 1D FX<br>`+
 						`<div class="sel-p"><select class="sel-p" id="seg${i}m12" onchange="setM12(${i})">`+
@@ -807,14 +807,14 @@ function populateSegments(s)
 					(isMSeg&&stoY-staY>1&&stoX-staX>1 ? map2D : '') +
 					(s.AudioReactive && s.AudioReactive.on ? "" : sndSim) +
 					`<label class="check revchkl" id="seg${i}lbtm">`+
-						(isMSeg?'Transpose':'Mirror effect') + (isMSeg ?
+						(isMSeg?'Chuyển đổi':'Phân ảnh') + (isMSeg ?
 						'<input type="checkbox" id="seg'+i+'tp" onchange="setTp('+i+')" '+(inst.tp?"checked":"")+'>':
 						'<input type="checkbox" id="seg'+i+'mi" onchange="setMi('+i+')" '+(inst.mi?"checked":"")+'>') +
 						`<span class="checkmark"></span>`+
 					`</label>`+
 					`<div class="del">`+
-						`<button class="btn btn-xs" id="segr${i}" title="Repeat until end" onclick="rptSeg(${i})"><i class="icons btn-icon">&#xe22d;</i></button>`+
-						`<button class="btn btn-xs" id="segd${i}" title="Delete" onclick="delSeg(${i})"><i class="icons btn-icon">&#xe037;</i></button>`+
+						`<button class="btn btn-xs" id="segr${i}" title="Lặp lại cho đến hết" onclick="rptSeg(${i})"><i class="icons btn-icon">&#xe22d;</i></button>`+
+						`<button class="btn btn-xs" id="segd${i}" title="Xóa" onclick="delSeg(${i})"><i class="icons btn-icon">&#xe037;</i></button>`+
 					`</div>`+
 				`</div>`+
 				(cfg.comp.segpwr ? '' : segp) +
@@ -1575,7 +1575,7 @@ function setEffectParameters(idx)
 		else                                       pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Bảng màu';
 	} else {
 		// disable palette list
-		pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Bảng màu không sử dụng';
+		pall.innerHTML = '<i class="icons sel-icon" onclick="tglHex()">&#xe2b3;</i> Hiệu ứng không dùng Bảng màu';
 		palw.style.display = "none";
 	}
 	// not all color selectors shown, hide palettes created from color selectors
