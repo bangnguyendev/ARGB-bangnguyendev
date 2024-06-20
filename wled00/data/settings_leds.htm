@@ -386,7 +386,7 @@ ${i+1}:
 <span id="p3d${i}"></span><input type="number" name="L3${i}" class="s" onchange="UI();pinUpd(this);"/>
 <span id="p4d${i}"></span><input type="number" name="L4${i}" class="s" onchange="UI();pinUpd(this);"/>
 <div id="dig${i}r" style="display:inline"><br><span id="rev${i}">Đảo ngược</span>: <input type="checkbox" name="CV${i}"></div>
-<div id="dig${i}s" style="display:inline"><br>Skip first LEDs: <input type="number" name="SL${i}" min="0" max="255" value="0" oninput="UI()"></div>
+<div id="dig${i}s" style="display:inline"><br>Số LEDs đầu tiên bỏ qua: <input type="number" name="SL${i}" min="0" max="255" value="0" oninput="UI()"></div>
 <div id="dig${i}f" style="display:inline"><br>Off Refresh: <input id="rf${i}" type="checkbox" name="RF${i}"></div>
 <div id="dig${i}a" style="display:inline"><br>Auto-calculate white channel from RGB:<br><select name="AW${i}"><option value=0>None</option><option value=1>Brighter</option><option value=2>Accurate</option><option value=3>Dual</option><option value=4>Max</option></select>&nbsp;</div>
 </div>`;
@@ -716,7 +716,7 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 			<!-- Luôn giữ &lt;1A nếu cấp nguồn cho đèn LED trực tiếp từ chân ESP 5V!<br> -->
 			<!-- Nếu bạn đang sử dụng nguồn điện bên ngoài, hãy nhập định mức của nó.<br> -->
 			(Mức sử dụng ước tính hiện tại: <span class="pow">unknown</span>)</i><br><br>
-			Điện áp LED (Dòng điện tối đa cho một đèn LED)::<br>
+			Điện áp LED (Dòng điện tối đa cho một đèn LED):<br>
 			<select name="LAsel" onchange="enLA()">
 				<option value="55" selected>5V default (55mA)</option>
 				<option value="35">5V efficient (35mA)</option>
@@ -741,8 +741,8 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 			Use less than <span id="wreason">800 LEDs per output</span> for the best experience!<br>
 		</div>
 		<hr class="sml">
-		Make a segment for each output: <input type="checkbox" name="MS"><br>
-		Custom bus start indices: <input type="checkbox" onchange="tglSi(this.checked)" id="si"><br>
+		Đồng bộ "Chia đoạn" trên tất cả dây LEDs: <input type="checkbox" name="MS"><br>
+		Tùy chỉnh vị trí Led bắt đầu: <input type="checkbox" onchange="tglSi(this.checked)" id="si"><br>
 		Use global LED buffer: <input type="checkbox" name="LD" onchange="UI()"><br>
 		<hr class="sml">
 		<div id="color_order_mapping">

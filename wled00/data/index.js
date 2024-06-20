@@ -418,17 +418,17 @@ function presetError(empty)
 
 	var cn = `<div class="pres c" ${empty?'style="padding:8px;margin-top: 16px;"':'onclick="pmtLast=0;loadPresets();" style="cursor:pointer;padding:8px;margin-top: 16px;"'}>`;
 	if (empty)
-		cn += `You have no presets yet!`;
+		cn += `Bạn chưa có Preset nào!`;
 	else
 		cn += `Sorry, there was an issue loading your presets!`;
 
 	if (hasBackup) {
 		cn += `<br><br>`;
 		if (empty)
-			cn += `However, there is backup preset data of a previous installation available.<br>
-			(Saving a preset will hide this and overwrite the backup)`;
+			cn += `Tuy nhiên, có sẵn dữ liệu cài sẵn dự phòng của cài đặt trước đó.<br>
+			(Việc lưu giá trị đặt trước sẽ ẩn phần này và ghi đè lên bản sao lưu)`;
 		else
-			cn += `Here is a backup of the last known good state:`;
+			cn += `Đây là bản sao lưu của trạng thái tốt được biết đến gần đây nhất:`;
 		cn += `<textarea id="bck"></textarea><br>
 			<button class="btn" onclick="cpBck()">Copy to clipboard</button>`;
 	}
@@ -550,7 +550,7 @@ function populateQL()
 	var cn = "";
 	if (pQL.length > 0) {
 		pQL.sort((a,b) => (a[0]>b[0]));
-		cn += `<p class="labels hd">Quick load</p>`;
+		cn += `<p class="labels hd">Phím tắt nhanh</p>`;
 		for (var key of (pQL||[])) {
 			cn += `<button class="btn btn-xs psts" id="p${key[0]}qlb" title="${key[2]?key[2]:''}" onclick="setPreset(${key[0]});">${key[1]}</button>`;
 		}
@@ -1774,7 +1774,7 @@ function makeSeg()
 				`</tr>`+
 			`</table>`+
 			`<div class="h" id="seg${lu}len">${ledCount - ns} LEDs</div>`+
-			`<div class="c"><button class="btn btn-p" onclick="resetUtil()">Hủy bỏ</button></div>`+
+			`<div class="c"><button class="btn btn-p" onclick="resetUtil()">Hủy</button></div>`+
 		`</div>`+
 	`</div>`;
 	gId('segutil').innerHTML = cn;
@@ -1913,14 +1913,14 @@ ${makePlSel(plJson[i].end?plJson[i].end:0, true)}
 		content =
 `<label class="check revchkl">
 	<span class="lstIname">
-	Include brightness
+	Bao gồm độ sáng
 	</span>
 	<input type="checkbox" id="p${i}ibtgl" checked>
 	<span class="checkmark"></span>
 </label>
 <label class="check revchkl">
 	<span class="lstIname">
-	Save segment bounds
+	Lưu phân đoạn LED
 	</span>
 	<input type="checkbox" id="p${i}sbtgl" checked>
 	<span class="checkmark"></span>
@@ -1940,12 +1940,12 @@ ${makePlSel(plJson[i].end?plJson[i].end:0, true)}
 	}
 
 	return `<input type="text" class="ptxt ${i==0?'show':''}" id="p${i}txt" autocomplete="off" maxlength=32 value="${(i>0)?pName(i):""}" placeholder="Enter name..."/>
-<div class="c">Quick load label: <input type="text" class="stxt" maxlength=2 value="${qlName(i)}" id="p${i}ql" autocomplete="off"/></div>
-<div class="h">(leave empty for no Quick load button)</div>
+<div class="c">Tên phím tắt: <input type="text" class="stxt" maxlength=2 value="${qlName(i)}" id="p${i}ql" autocomplete="off"/></div>
+<div class="h">(để trống nếu không dùng nút phím tắt)</div>
 <div ${pl&&i==0?"style='display:none'":""}>
 <label class="check revchkl">
 	<span class="lstIname">
-	${pl?"Show playlist editor":(i>0)?"Overwrite with state":"Use current state"}
+	${pl?"Show playlist editor":(i>0)?"Ghi đè bằng trạng thái":"Sử dụng trạng thái hiện tại"}
 	</span>
 	<input type="checkbox" id="p${i}cstgl" onchange="tglCs(${i})" ${(i==0||pl)?"checked":""}>
 	<span class="checkmark"></span>
@@ -1953,10 +1953,10 @@ ${makePlSel(plJson[i].end?plJson[i].end:0, true)}
 </div>
 <div class="po2" id="p${i}o2">API command<br><textarea class="apitxt" id="p${i}api"></textarea></div>
 <div class="po1" id="p${i}o1">${content}</div>
-<div class="c m6">Save to ID <input id="p${i}id" type="number" oninput="checkUsed(${i})" max=250 min=1 value=${(i>0)?i:getLowestUnusedP()}></div>
+<div class="c m6">Lưu lại với ID <input id="p${i}id" type="number" oninput="checkUsed(${i})" max=250 min=1 value=${(i>0)?i:getLowestUnusedP()}></div>
 <div class="c">
-	<button class="btn btn-p" onclick="saveP(${i},${pl})"><i class="icons btn-icon">&#xe390;</i>Save</button>
-	${(i>0)?'<button class="btn btn-p" id="p'+i+'del" onclick="delP('+i+')"><i class="icons btn-icon">&#xe037;</i>Delete':'<button class="btn btn-p" onclick="resetPUtil()">Cancel'}</button>
+	<button class="btn btn-p" onclick="saveP(${i},${pl})"><i class="icons btn-icon">&#xe390;</i>Lưu</button>
+	${(i>0)?'<button class="btn btn-p" id="p'+i+'del" onclick="delP('+i+')"><i class="icons btn-icon">&#xe037;</i>Xóa':'<button class="btn btn-p" onclick="resetPUtil()">Hủy'}</button>
 </div>
 <div class="pwarn ${(i>0)?"bp":""} c" id="p${i}warn"></div>
 ${(i>0)? ('<div class="h">ID ' +i+ '</div>'):""}`;
@@ -2152,7 +2152,7 @@ function setSeg(s)
 function delSeg(s)
 {
 	if (segCount < 2) {
-		showToast("You need to have multiple segments to delete one!");
+		showToast("Bạn cần phải có nhiều phân đoạn để xóa một phân đoạn!");
 		return;
 	}
 	segCount--;
@@ -2321,7 +2321,7 @@ function setPreset(i)
 		delete obj.n;  // no need for name
 	}
 	if (isPlaylist(i)) obj.on = true; // force on
-	showToast("Loading preset " + pName(i) +" (" + i + ")");
+	showToast("Đang tải preset " + pName(i) +" (" + i + ")");
 	requestJson(obj);
 }
 
@@ -2329,7 +2329,7 @@ function saveP(i,pl)
 {
 	pI = parseInt(gId(`p${i}id`).value);
 	if (!pI || pI < 1) pI = (i>0) ? i : getLowestUnusedP();
-	if (pI > 250) {alert("Preset ID must be 250 or less."); return;}
+	if (pI > 250) {alert("Preset ID phải nhỏ hơn 250."); return;}
 	pN = gId(`p${i}txt`).value;
 	if (pN == "") pN = (pl?"Playlist ":"Preset ") + pI;
 	var obj = {};
@@ -2346,7 +2346,7 @@ function saveP(i,pl)
 				gId(`p${i}warn`).innerHTML = "&#9888; Syntax error in custom JSON API command";
 				return;
 			} else if (raw.indexOf("Please") == 0) {
-				gId(`p${i}warn`).innerHTML = "&#9888; Please refresh the page before modifying this preset";
+				gId(`p${i}warn`).innerHTML = "&#9888; Vui lòng làm mới trang trước khi sửa đổi Preset này";
 				return;
 			}
 		}
@@ -2377,7 +2377,7 @@ function saveP(i,pl)
 		delete pJson[pI].v;
 		delete pJson[pI].time;
 	} else {
-		pJson[pI] = {"n":pN, "win":"Please refresh the page to see this newly saved command."};
+		pJson[pI] = {"n":pN, "win":"Vui lòng làm mới trang để xem lệnh mới được lưu này."};
 		if (obj.win) pJson[pI].win = obj.win;
 		if (obj.ql)  pJson[pI].ql = obj.ql;
 	}
@@ -2415,7 +2415,7 @@ function delP(i) {
 		gId('putil').classList.add('staybot');
 	} else {
 		bt.style.color = "var(--c-r)";
-		bt.innerHTML = "<i class='icons btn-icon'>&#xe037;</i>Delete!";
+		bt.innerHTML = "<i class='icons btn-icon'>&#xe037;</i>Xác nhận!";
 		bt.dataset.cnf = 1;
 	}
 }
@@ -2631,12 +2631,12 @@ function rSegs()
 	var bt = gId('rsbtn');
 	if (!cnfrS) {
 		bt.style.color = "var(--c-r)";
-		bt.innerHTML = "Confirm reset";
+		bt.innerHTML = "Xác nhận xóa";
 		cnfrS = true; return;
 	}
 	cnfrS = false;
 	bt.style.color = "var(--c-f)";
-	bt.innerHTML = "Reset segments";
+	bt.innerHTML = "Xóa hết";
 	var obj = {"seg":[{"start":0,"stop":ledCount,"sel":true}]};
 	if (isM) {
 		obj.seg[0].stop = mw;
