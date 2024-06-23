@@ -2,6 +2,10 @@
 // version code in format yymmddb (b = language build)
 // b = 0 EN; b = 1 VN
 
+#### Build 2406231
+-   ARGB 1.0.0 - 🇻🇳 release - porting from WLED 0.14.4 release
+-   bangnguyendev updated Web UI
+
 #### Build 2406201
 -   ARGB 1.0.0 - 🇻🇳 release - porting from WLED 0.14.4 release
 -   bangnguyendev updated Web UI

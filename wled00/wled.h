@@ -9,7 +9,7 @@
 
 // version code in format yymmddb (b = language build)
 // b = 0 EN; b = 1 VN
-#define VERSION 2406201
+#define VERSION 2406231
 
 //uncomment this if you have a "my_config.h" file you'd like to use
 //#define WLED_USE_MY_CONFIG
@@ -471,7 +471,7 @@ WLED_GLOBAL char last_signal_src[13]   _INIT("");
 #endif
 
 // Time CONFIG
-WLED_GLOBAL bool ntpEnabled _INIT(false);    // get internet time. Only required if you use clock overlays or time-activated macros
+WLED_GLOBAL bool ntpEnabled _INIT(true);    // get internet time. Only required if you use clock overlays or time-activated macros
 WLED_GLOBAL bool useAMPM _INIT(false);       // 12h/24h clock format
 WLED_GLOBAL byte currentTimezone _INIT(0);   // Timezone ID. Refer to timezones array in wled10_ntp.ino
 WLED_GLOBAL int utcOffsetSecs _INIT(0);      // Seconds to offset from UTC before timzone calculation

@@ -420,7 +420,7 @@ function presetError(empty)
 	if (empty)
 		cn += `Bạn chưa có Preset nào!`;
 	else
-		cn += `Sorry, there was an issue loading your presets!`;
+		cn += `Rất tiếc, đã xảy ra sự cố khi tải Presets của bạn !`;
 
 	if (hasBackup) {
 		cn += `<br><br>`;
@@ -2009,7 +2009,7 @@ function makePlEntry(p,i)
 function makePlUtil()
 {
 	if (pNum < 2) {
-		showToast("You need at least 2 presets to make a playlist!"); //return;
+		showToast("Bạn cần ít nhất 2 Preset để tạo danh sách phát!"); //return;
 	}
 	let p = gId('putil');
 	p.classList.remove('staybot');
