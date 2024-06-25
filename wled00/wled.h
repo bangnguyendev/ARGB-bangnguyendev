@@ -9,7 +9,7 @@
 
 // version code in format yymmddb (b = language build)
 // b = 0 EN; b = 1 VN
-#define VERSION 2406231
+#define VERSION 2406251
 
 //uncomment this if you have a "my_config.h" file you'd like to use
 //#define WLED_USE_MY_CONFIG
