@@ -17,7 +17,7 @@
 		function N() {
 			const button = gId("scan");
 			button.disabled = true;
-			button.textContent = "Đang tìm...";
+			button.textContent = "Scanning...";
 
 			fetch(getURL("/json/net")).then((response) => {
 				return response.json();
@@ -86,7 +86,7 @@
 				}
 
 				button.disabled = false;
-				button.textContent = "Tiếp tục tìm Wifi";
+				button.textContent = "Scan";
 			});
 		}
 		// replace WiFi select with custom SSID input field again
@@ -125,7 +125,7 @@
 				loc = true;
 				locip = localStorage.getItem('locIp');
 				if (!locip) {
-					locip = prompt("File Mode. Please enter ARGB IP!");
+					locip = prompt("File Mode. Please enter WLED IP!");
 					localStorage.setItem('locIp', locip);
 				}
 			} else {
@@ -178,45 +178,40 @@
 		<input name="S3" type="number" class="s" min="0" max="255" required><br>
 		mDNS address (leave empty for no mDNS):<br>
 		http:// <input type="text" name="CM" maxlength="32"> .local<br>
-		IP hiện tại của bo mạch: <span class="sip"> Không có kết nối </span> <br>
-		<hr>
-		<h3>Cấu hình làm trạm phát WIFI AP</h3>
-		Tên WIFI AP (leave empty for no AP):<br> <input type="text" name="AS" maxlength="32"><br>
+		Client IP: <span class="sip"> Not connected </span> <br>
+		<h3>Configure Access Point</h3>
+		AP SSID (leave empty for no AP):<br> <input type="text" name="AS" maxlength="32"><br>
 		Hide AP name: <input type="checkbox" name="AH"><br>
-		Mật khẩu WIFI AP (leave empty for open):<br> <input type="password" name="AP" maxlength="63" pattern="(.{8,63})|()" title="Empty or min. 8 characters"><br>
-		Kênh sóng WIFI AP: <input name="AC" type="number" class="xs" min="1" max="13" required><br>
-		Wifi AP được kích hoạt khi:
+		AP password (leave empty for open):<br> <input type="password" name="AP" maxlength="63" pattern="(.{8,63})|()" title="Empty or min. 8 characters"><br>
+		Access Point WiFi channel: <input name="AC" type="number" class="xs" min="1" max="13" required><br>
+		AP opens:
 		<select name="AB">
-		<option value="0">Không kết nối sau khi khởi động</option>
-		<option value="1">Không thể kết nối đến WIFI</option>
-		<option value="2">Luôn mở</option>
-		<option value="3">Không bao giờ (không khuyến khích)</option></select><br>
+		<option value="0">No connection after boot</option>
+		<option value="1">Disconnected</option>
+		<option value="2">Always</option>
+		<option value="3">Never (not recommended)</option></select><br>
 		AP IP: <span class="sip"> Not active </span><br>
+		<h3>Experimental</h3>
+		Force 802.11g mode (ESP8266 only): <input type="checkbox" name="FG"><br>
+		Disable WiFi sleep: <input type="checkbox" name="WS"><br>
+		<i>Can help with connectivity issues.<br>
+		Do not enable if WiFi is working correctly, increases power consumption.</i>
 
-		<hr>
-		<h3>Experimental - Nâng cao</h3>
-		<!-- Force 802.11g mode (ESP8266 only): <input type="checkbox" name="FG"><br> -->
-		Tắt chế độ ngủ WiFi: <input type="checkbox" name="WS"><br>
-		<i>Mục này trợ giúp về vấn đề kết nối<br>
-		Tuy nhiên, không ✔️ nếu WiFi hoạt động bình thường, làm tăng mức tiêu thụ điện năng.</i>
-
-		<hr>
 		<div id="remd">
-			<h3>Điều khiển thông qua Wifi</h3>
-			<i>Nghe các lệnh qua ESP-NOW<br>
-			⚠️Đây là tính năng điều khiển thông qua SÓNG WIFI của một bo mạch khác, KHÔNG PHẢI REMOTE!<br>
-			Tắt tính năng này nếu không sử dụng điều khiển từ xa bằng ESP-NOW, làm tăng mức tiêu thụ điện năng.<br></i>
+			<h3>Wireless Remote</h3>
+			<i>Listen for events over ESP-NOW<br>
+			Keep disabled if not using a remote, increases power consumption.<br></i>
 		
-			Kích hoạt điều khiển từ xa: <input type="checkbox" name="RE"><br>
-			MAC phần cứng: <input type="text" name="RMAC"><br>
-			Nhìn thấy lần cuối: <span class="rlid">None</span> <br>
+			Enable Remote: <input type="checkbox" name="RE"><br>
+			Hardware MAC: <input type="text" name="RMAC"><br>
+			Last Seen: <span class="rlid">None</span> <br>
 		</div>
 
 		<div id="ethd">
 			<h3>Ethernet Type</h3>
 			<select name="ETH">
 				<option value="0">None</option>
-				<option value="9">ABC! ARGB V43 & compatible</option>
+				<option value="9">ABC! WLED V43 & compatible</option>
 				<option value="2">ESP32-POE</option>
 				<option value="6">ESP32Deux</option>
 				<option value="7">KIT-VE</option>

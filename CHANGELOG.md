@@ -2,6 +2,11 @@
 // version code in format yymmddb (b = language build)
 // b = 0 EN; b = 1 VN
 
+#### Build 2412021
+-   ARGB 2.0.0 - 🇻🇳 release - Cập nhật không hiển thị IP trong mục cài đặt wifi
+-   Hiển thị gợi ý vị trí Pin Data GPIO26, nút nhấn BTN GPIO25
+-   bangnguyendev updated Web UI
+
 #### Build 2406251
 -   ARGB 1.0.0 - 🇻🇳 release - cập nhật Đồng hồ số và cảnh báo giới hạn nguồn
 -   bangnguyendev updated Web UI

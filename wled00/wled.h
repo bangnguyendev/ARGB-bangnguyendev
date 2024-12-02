@@ -2,14 +2,14 @@
 #define WLED_H
 /*
    Main sketch, global variable declarations
-   @title WLED project sketch
-   @version 1.0.0
+   @title ARGB HAPPY LIGHT project sketch
+   @version 2.0.0
    @author bangnguyendev
  */
 
 // version code in format yymmddb (b = language build)
 // b = 0 EN; b = 1 VN
-#define VERSION 2406251
+#define VERSION 2412021
 
 //uncomment this if you have a "my_config.h" file you'd like to use
 //#define WLED_USE_MY_CONFIG
