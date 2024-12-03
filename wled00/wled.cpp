@@ -456,6 +456,7 @@ pinManager.allocateMultiplePins(pins, sizeof(pins)/sizeof(managed_pin_type), Pin
   if (!pinManager.isPinAllocated(hardwareRX) && !pinManager.isPinAllocated(hardwareTX)) {
     Serial.println("\n");
     Serial.println(F("Adalight - bangnguyendev"));
+    Serial.print("ARGB-bangnguyendev"); Serial.write(' '); Serial.println(VERSION);
   }
   #endif
 

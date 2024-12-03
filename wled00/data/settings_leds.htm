@@ -173,7 +173,7 @@
 				// is the field a LED type?
 				var n = s.name.substring(2);
 				var t = parseInt(s.value);
-				gId("p0d"+n).innerHTML = (t>=80 && t<96) ? "IP address:" : (t > 49) ? "Data GPIO:" : (t > 41) ? "GPIOs:" : "Mặc định Pin 26:";
+				gId("p0d"+n).innerHTML = (t>=80 && t<96) ? "IP address:" : (t > 49) ? "Data GPIO:" : (t > 41) ? "GPIOs:" : "GPIO";
 				gId("p1d"+n).innerHTML = (t> 49 && t<64) ? "Clk GPIO:" : "";
 				//var LK = d.getElementsByName("L1"+n)[0]; // clock pin
 
@@ -380,7 +380,8 @@ ${i+1}:
 <span id="psd${i}">Led bắt đầu tại:</span> <input type="number" name="LS${i}" id="ls${i}" class="l starts" min="0" max="8191" value="${lastEnd(i)}" oninput="startsDirty[${i}]=true;UI();" required />&nbsp;
 <div id="dig${i}c" style="display:inline">Số lượng Leds: <input type="number" name="LC${i}" class="l" min="1" max="${maxPB}" value="1" required oninput="UI()" /></div><br>
 </div>
-<h3>ARGB ver 2.0.0</h3>
+<h4>Board ARGB ver 2.0.0</h4>
+<div> Mặc định GPIO WS281x : 26 </div>
 <span id="p0d${i}"></span><input type="number" name="L0${i}" required class="s" onchange="UI();pinUpd(this);"/>
 <span id="p1d${i}"></span><input type="number" name="L1${i}" class="s" onchange="UI();pinUpd(this);"/>
 <span id="p2d${i}"></span><input type="number" name="L2${i}" class="s" onchange="UI();pinUpd(this);"/>
