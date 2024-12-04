@@ -173,7 +173,7 @@
 				// is the field a LED type?
 				var n = s.name.substring(2);
 				var t = parseInt(s.value);
-				gId("p0d"+n).innerHTML = (t>=80 && t<96) ? "IP address:" : (t > 49) ? "Data GPIO:" : (t > 41) ? "GPIOs:" : "Mặc định Pin 26:";
+				gId("p0d"+n).innerHTML = (t>=80 && t<96) ? "IP address:" : (t > 49) ? "Data GPIO:" : (t > 41) ? "GPIOs:" : "GPIO:";
 				gId("p1d"+n).innerHTML = (t> 49 && t<64) ? "Clk GPIO:" : "";
 				//var LK = d.getElementsByName("L1"+n)[0]; // clock pin
 
