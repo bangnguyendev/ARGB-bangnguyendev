@@ -1,95 +1,94 @@
 <p align="center">
 
   <a href="https://github.com/bangnguyendev/ARGB-bangnguyendev/releases"><img src="https://img.shields.io/github/release/bangnguyendev/ARGB-bangnguyendev.svg?style=flat-square"></a>
-  <a href="https://raw.githubusercontent.com/Aircoookie/WLED/master/LICENSE"><img src="https://img.shields.io/github/license/Aircoookie/wled?color=blue&style=flat-square"></a>
-  <a href="https://wled.discourse.group"><img src="https://img.shields.io/discourse/topics?colorB=blue&label=forum&server=https%3A%2F%2Fwled.discourse.group%2F&style=flat-square"></a>
-  <a href="https://discord.gg/QAh7wJHrRM"><img src="https://img.shields.io/discord/473448917040758787.svg?colorB=blue&label=discord&style=flat-square"></a>
-  <a href="https://kno.wled.ge"><img src="https://img.shields.io/badge/quick_start-wiki-blue.svg?style=flat-square"></a>
-  <a href="https://github.com/Aircoookie/WLED-App"><img src="https://img.shields.io/badge/app-wled-blue.svg?style=flat-square"></a>
-  <a href="https://gitpod.io/#https://github.com/bangnguyendev/ARGB-bangnguyendev"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?style=flat-square&logo=gitpod"></a>
+</p>
 
-  </p>
+### Chào mừng đến với bộ điều khiển led ARGB! ✨
 
-# Welcome to my project ARGB (mod from *WLED*)! ✨
+**Triển khai nhanh chóng** và nhiều tính năng để điều khiển đèn **LED NeoPixel** (WS2812B, WS2811, SK6812, ...) hoặc các chipsets dựa trên SPI như WS2801 và APA102!
 
-A fast and feature-rich implementation of an **ESP8266/ESP32** webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs or also SPI based chipsets like the WS2801 and APA102!
+### 💡 Các loại chip Led được hổ trợ
 
-## ⚙️ Features
-- WS2812FX library with more than **100 special effects**
-- **FastLED** noise effects and **50 palettes**  
-- Modern UI with color, effect and segment controls  
-- Segments to set different effects and colors to user defined parts of the LED string  
-- Settings page - configuration via the network  
-- Access Point and station mode - **automatic failsafe AP** 
-- Up to 10 LED outputs per instance
-- Support for RGBW strips  
-- Up to **250 user presets** to save and load colors/effects easily, supports cycling through them.  
-- Presets can be used to automatically execute API calls  
-- Nightlight function (gradually dims down)  
-- Full OTA software updateability (HTTP + ArduinoOTA), password protectable  
-- Configurable analog clock (Cronixie, 7-segment and EleksTube IPS clock support via usermods) 
-- Configurable Auto Brightness limit for safe operation  
-- Filesystem-based config for easier backup of presets and settings  
+- [Các loại chip Led được hổ trợ](basics/compatible-led-strips)
 
-## 💡 Supported light control interfaces
-- ARGB using WLED app for [Android](https://play.google.com/store/apps/details?id=com.aircoookie.WLED) and [iOS](https://apps.apple.com/us/app/wled/id1475695033)
-- JSON and HTTP request APIs  
-- MQTT   
-- E1.31, Art-Net, DDP and TPM2.net
-- [diyHue](https://github.com/diyhue/diyHue) (Wled is supported by diyHue, including Hue Sync Entertainment under udp. Thanks to [Gregory Mallios](https://github.com/gmallios))
-- [Hyperion](https://github.com/hyperion-project/hyperion.ng)
-- UDP realtime  
-- Alexa voice control (including dimming and color)  
-- Sync to Philips hue lights  
-- **Adalight** (PC ambilight via serial) and TPM2  
-- Sync color of **multiple ARGB devices** (UDP notifier)  
-- Infrared remotes (24-key RGB, receiver required)  
-- **Simple timers/schedules** (time from NTP, timezones/DST supported)  
+#### Bảng 1: SPI 3-wire và SPI 4-wire
 
-## 📲 Quick start guide and documentation
+| **SPI 3-wire**        | **SPI 4-wire**          |
+|-----------------------|-------------------------|
+| WS281x                | APA102                  |
+| SK6812/WS2814 RGBW    | LPD8806                 |
+| TM1814                | LPD6803                 |
+| 400kHz                | P9813                   |
+| TM1829                |                         |
+| UCS8903               |                         |
+| UCS8904 RGBW          |                         |
+| WS2801                |                         |
 
-See the [documentation on our official site](https://kno.wled.ge)!
+#### Bảng 2: PWM và Others
 
-[On this page](https://kno.wled.ge/basics/tutorials/) you can find excellent tutorials and tools to help you get your new project up and running!
+| **PWM**              | **Others**              |
+|----------------------|-------------------------|
+| WS2811 White         | On/Off                  |
+| PWM White            | DDP RGB (network)       |
+| PWM CCT              | E1.31 RGB (network)     |
+| PWM RGB              | Art-Net RGB (network)   |
+| PWM RGBW             | DDP RGBW (network)      |
+| PWM RGB+CCT          |                         |
+| PWM RGB+DCCT         |                         |
 
-## 🖼️ User interface
-<img src="images/macbook-pro-space-gray-on-the-wooden-table.jpg" width="50%"><img src="images/walking-with-iphone-x.jpg" width="50%">
 
-## 💾 Compatible hardware
+#### ⚙️ Tính năng
 
-See [here](https://kno.wled.ge/basics/compatible-hardware)!
+- Thư viện **WS2812FX** tích hợp cho **hơn 180 hiệu ứng đặc biệt**
+- Hiệu ứng **FastLED** và 50 bảng màu
+- Giao diện hiện đại với điều khiển màu sắc, hiệu ứng và **phân đoạn Led**
+- **Phân đoạn** để đặt các hiệu ứng và màu sắc khác nhau **cho các phần của đèn LED**
+- Két nối mạng wifi thông minh.
+- Tối đa **2 ngõ đầu ra kết nối đèn LED** cho mỗi mạch ARGB v1.0.0 (**mỗi đầu ra 800 leds**)
+- Có thể kết nối không giới hạn các module ARGB v1.0.0
+- **Tối đa 250 Preset** của người dùng để dễ dàng lưu và tải màu sắc/hiệu ứng, hỗ trợ chuyển đổi qua lại giữa chúng
+- **Preset** có thể được sử dụng để tự động thực thi các lệnh API
+- Chức năng đèn ngủ (giảm dần độ sáng)
+- Cập nhật phần mềm OTA đầy đủ (HTTP + ArduinoOTA), có thể bảo vệ bằng mật khẩu.
+- Đồng hồ analog có thể cấu hình + **hỗ trợ bộ kit Cronixie của Diamex**
+- Giới hạn độ sáng tự động có thể cấu hình để hoạt động an toàn hơn.
+- Cấu hình dựa trên hệ thống tập tin để **dễ dàng sao lưu cài đặt** trước và cài đặt.
 
-![Compatible hardware](https://github.com/Aircoookie/WLED-Docs/assets/59397047/78cc27f3-f0e4-4c04-bd3f-d35caf143456)
+<!-- - Native [Home-Assistant integration](https://www.home-assistant.io/integrations/wled/): [![Start native Homeassistant integration configuration](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=wled) -->
 
-While using an ESP8266 and LEDs that have clock and data, you can either use hardware SPI (mostly faster) or software SPI.
+### 💡 Ứng dụng điều khiển mạch
 
-- hardware SPI: use GPIO14 (SCLK) for clock and GPIO13 (MOSI) for data.
+#### ⚡Phần mềm bắt buộc:
 
-- software SPI: since all pins can be changed in the Hardware section of LED settings, you can use any pins. Recommend is to use GPIO1 (TxD) for clock and GPIO2 (D4) for data.
+- 💻Trên PC/laptop:
+   - 🔥 [WLED PC – LED Control](https://github.com/w00000dy/WLED-GUI/releases/): Công cụ **điều khiển chính**
 
-## 💾 Connect to the access point WLED-AP
+- 📱Trên Smartphone:
+   - 🔥 Ứng dụng **Android**: [WLED](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid)
+   - 🔥 Ứng dụng **iOS**: [WLED](https://apps.apple.com/us/app/wled-native/id6446207239)
 
-Use a WiFi device to connect to the access point WLED-AP using the default password wled1234. You can also just scan this QR code:
+#### ⚡Phần mềm tùy chọn trên PC/laptop:
+- 🔥 [xLights – LED Control](https://xlights.org/releases/): Điều khiển và lập trình LED chuyên nghiệp.
+- 🔥 [Jinx! – LED Matrix Control](https://live-leds.de/): Điều khiển LED cho bảng ma trận chuyên dụng.
+- 🔥 [LedFx](https://www.ledfx.app/): Điều khiển LED nhấp nháy theo nhạc sống động.
+- 🔥 [Lightpack - Prismatik](https://github.com/psieg/Lightpack/releases): Hiệu ứng **Ambilight** trang trí màn hình PC/laptop.
+- 🔥 [Hyperion](https://github.com/hyperion-project/hyperion.ng): Trang trí LED cho TV với hiệu ứng đẹp mắt.
 
-![ARGB-AP](/images/ARGB-AP.jpg)
+#### ⚡👉 [Danh sách các phần mềm khác](basics/compatible-software).
 
-Go to the IP 4.3.2.1 in your browser to control your lights! You should also be able to connect to wled.me if in access point mode (embedded DNS server).
 
-## ✌️ Other
+### 💡 Các chuẩn kết nối ARGB có thể sử dụng
 
-Licensed under the MIT license  
-Credits [here](https://kno.wled.ge/about/contributors/)!
+- [JSON](interfaces/json-api) and [HTTP request](interfaces/http-api) APIs  
+- [MQTT](interfaces/mqtt)  
+<!-- - [Blynk IoT](interfaces/blynk)   -->
+- [E1.31](interfaces/e1.31-dmx), [Art-Net](interfaces/e1.31-dmx), DDP and [TPM2.net](interfaces/udp-realtime)
+- [UDP realtime](interfaces/udp-realtime)
+- [Alexa voice control (including dimming and color)](/advanced/remote-access-ifttt)
+- [Sync to Philips Hue lights](interfaces/philips-hue)
+- Adalight (PC ambilight via serial) và TPM2 -> Trang trí màn hình PC/Laptop siêu đẹp
+- [Sync color of multiple ARGB devices (UDP notifier)](interfaces/udp-notifier)
+- [Infrared remotes (24-key RGB, receiver required)](interfaces/infrared)
+- Simple timers/schedules (time from NTP, timezones/DST supported)  
 
-Join the Discord server to discuss everything about WLED!
-
-<a href="https://discord.gg/QAh7wJHrRM"><img src="https://discordapp.com/api/guilds/473448917040758787/widget.png?style=banner2" width="25%"></a>
-
-Check out the WLED [Discourse forum](https://wled.discourse.group)!  
-
-*Disclaimer:*   
-
-If you are prone to photosensitive epilepsy, we recommended you do **not** use this software.  
-If you still want to try, don't use strobe, lighting or noise modes or high effect speed settings.
-
-As per the MIT license, I assume no liability for any damage to you or any other person or equipment.  
-
+## ✌️ Happy Smart Light - bangnguyendev
