@@ -687,6 +687,7 @@ ${inforow("Free heap",heap," kB")}
 ${i.psram?inforow("Free PSRAM",(i.psram/1024).toFixed(1)," kB"):""}
 ${inforow("Ước tính dòng tiêu thụ",pwru)}
 ${inforow("FPS trung bình",i.leds.fps)}
+${inforow("Địa chỉ IP",i.ip)}
 ${inforow("Địa chỉ MAC",i.mac)}
 ${inforow("Dung lượng FS",i.fs.u + "/" + i.fs.t + " kB (" +Math.round(i.fs.u*100/i.fs.t) + "%)")}
 ${inforow("ChipCore ",i.arch + " " + i.core + " (" + i.lwip + ")")}
