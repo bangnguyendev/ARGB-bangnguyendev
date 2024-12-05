@@ -381,8 +381,8 @@ ${i+1}:
 <div id="dig${i}c" style="display:inline">Số lượng Leds: <input type="number" name="LC${i}" class="l" min="1" max="${maxPB}" value="1" required oninput="UI()" /></div><br>
 </div>
 <h4>Board ARGB ver 1.0.0</h4>
-<div>Mặc định GPIO WS281x : 16</div>
-<div>Mặc định CLK WS281x : 43</div>
+<div>Mặc định GPIO : 16 (WS281x)</div>
+<div>Mặc định CLK  : 43 (WS2801, APA102..)</div>
 <span id="p0d${i}"></span><input type="number" name="L0${i}" required class="s" onchange="UI();pinUpd(this);"/>
 <span id="p1d${i}"></span><input type="number" name="L1${i}" class="s" onchange="UI();pinUpd(this);"/>
 <span id="p2d${i}"></span><input type="number" name="L2${i}" class="s" onchange="UI();pinUpd(this);"/>
